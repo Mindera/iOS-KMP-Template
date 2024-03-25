@@ -15,6 +15,8 @@
 		373615CC2BA8250900F0854D /* iOSKMPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615CB2BA8250900F0854D /* iOSKMPTests.swift */; };
 		373615D62BA8250900F0854D /* iOSKMPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615D52BA8250900F0854D /* iOSKMPUITests.swift */; };
 		373615D82BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */; };
+		373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */; };
+		373615F42BB1807400F0854D /* CurrencyExchangeKMP.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373615F32BB1807400F0854D /* CurrencyExchangeKMP.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		373615D12BA8250900F0854D /* iOSKMPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSKMPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		373615D52BA8250900F0854D /* iOSKMPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPUITests.swift; sourceTree = "<group>"; };
 		373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewModel.swift; sourceTree = "<group>"; };
+		373615F32BB1807400F0854D /* CurrencyExchangeKMP.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CurrencyExchangeKMP.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373615F42BB1807400F0854D /* CurrencyExchangeKMP.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,7 @@
 		373615AC2BA8250700F0854D = {
 			isa = PBXGroup;
 			children = (
+				373615F12BB1807400F0854D /* XCFrameworks */,
 				373615B72BA8250800F0854D /* iOSKMP */,
 				373615CA2BA8250900F0854D /* iOSKMPTests */,
 				373615D42BA8250900F0854D /* iOSKMPUITests */,
@@ -96,6 +102,7 @@
 		373615B72BA8250800F0854D /* iOSKMP */ = {
 			isa = PBXGroup;
 			children = (
+				373615E62BA846CB00F0854D /* ViewModel */,
 				373615B82BA8250800F0854D /* iOSKMPApp.swift */,
 				373615BA2BA8250800F0854D /* ContentView.swift */,
 				373615BC2BA8250800F0854D /* Item.swift */,
@@ -128,6 +135,30 @@
 				373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */,
 			);
 			path = iOSKMPUITests;
+			sourceTree = "<group>";
+		};
+		373615E62BA846CB00F0854D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		373615F12BB1807400F0854D /* XCFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				373615F22BB1807400F0854D /* debug */,
+			);
+			path = XCFrameworks;
+			sourceTree = "<group>";
+		};
+		373615F22BB1807400F0854D /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				373615F32BB1807400F0854D /* CurrencyExchangeKMP.xcframework */,
+			);
+			path = debug;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				373615BB2BA8250800F0854D /* ContentView.swift in Sources */,
+				373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */,
 				373615BD2BA8250800F0854D /* Item.swift in Sources */,
 				373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */,
 			);

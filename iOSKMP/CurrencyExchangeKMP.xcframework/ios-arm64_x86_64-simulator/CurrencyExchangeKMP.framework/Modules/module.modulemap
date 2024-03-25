@@ -1,0 +1,6 @@
+framework module CurrencyExchangeKMP {
+    umbrella header "CurrencyExchangeKMP.h"
+
+    export *
+    module * { export * }
+}

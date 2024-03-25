@@ -7,9 +7,13 @@
 
 import SwiftUI
 import SwiftData
+import CurrencyExchangeKMP
 
 @main
 struct iOSKMPApp: App {
+    init() {
+        IOSKoinHelperKt.doInitKoin()
+    }
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
