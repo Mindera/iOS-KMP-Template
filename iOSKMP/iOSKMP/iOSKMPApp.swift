@@ -29,7 +29,7 @@ struct iOSKMPApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CurrencyExchangeView()
         }
         .modelContainer(sharedModelContainer)
     }
