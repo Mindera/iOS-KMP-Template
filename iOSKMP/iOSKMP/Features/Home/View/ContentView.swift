@@ -10,23 +10,31 @@ struct CurrencyExchangeView: View {
                            GridItem(.flexible(), spacing: 0)]
 
     var body: some View {
-        VStack {
+        ScrollView {
             Toggle(isOn: $isListModeOn) {
                 Text("View mode")
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
             
             if isListModeOn {
-                LazyVGrid(columns: columns, alignment: .center, spacing: 0) {
-                    ForEach(viewModel.currencyExchangeModels) { currencyExchangeModel in
-                        Text(currencyExchangeModel.date)
-                            .padding([.trailing], 5)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                            .frame(height: 40)
-                            .border(Color.black)
+                ForEach(viewModel.currencyExchangeModels) { model in
+                    Section {
+                        DisclosureGroup {
+                            ForEach(model.exchangeRates) { exhangeRate in
+                                HStack {
+                                    Text(exhangeRate.code)
+                                        .frame(minWidth: 50, alignment: .leading)
+                                    Text(exhangeRate.currency)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    Text("\(exhangeRate.currencyRate)")
+                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                }
+                            }
+                        } label: {
+                            Text(model.date)
+                        }
                     }
                 }
-                .padding()
             } else {
 //                Chart {
 //                    ForEach(data) { goldValue in
