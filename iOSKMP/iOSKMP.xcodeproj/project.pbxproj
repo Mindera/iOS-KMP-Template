@@ -17,6 +17,7 @@
 		373615D82BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */; };
 		373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */; };
 		373615F42BB1807400F0854D /* CurrencyExchangeKMP.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373615F32BB1807400F0854D /* CurrencyExchangeKMP.xcframework */; };
+		8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487BE012BCD852E0060B600 /* Color+Extensions.swift */; };
 		8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A3BB2BC9672600FF9103 /* CurrencyExchangeRateModel.swift */; };
 		8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A3BD2BC96AE600FF9103 /* CurrencyExchangeModel.swift */; };
 		84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */; };
@@ -53,6 +54,7 @@
 		373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewModel.swift; sourceTree = "<group>"; };
 		373615F32BB1807400F0854D /* CurrencyExchangeKMP.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CurrencyExchangeKMP.xcframework; sourceTree = "<group>"; };
+		8487BE012BCD852E0060B600 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		8491A3BB2BC9672600FF9103 /* CurrencyExchangeRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeRateModel.swift; sourceTree = "<group>"; };
 		8491A3BD2BC96AE600FF9103 /* CurrencyExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeModel.swift; sourceTree = "<group>"; };
 		84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewMode.swift; sourceTree = "<group>"; };
@@ -108,11 +110,12 @@
 		373615B72BA8250800F0854D /* iOSKMP */ = {
 			isa = PBXGroup;
 			children = (
-				8491A3B62BC9655300FF9103 /* Scenes */,
 				373615B82BA8250800F0854D /* iOSKMPApp.swift */,
 				373615BC2BA8250800F0854D /* Item.swift */,
 				373615BE2BA8250900F0854D /* Assets.xcassets */,
 				373615C02BA8250900F0854D /* Preview Content */,
+				8491A3B62BC9655300FF9103 /* Scenes */,
+				8487BDFF2BCD84A40060B600 /* Utilities */,
 			);
 			path = iOSKMP;
 			sourceTree = "<group>";
@@ -156,6 +159,22 @@
 				373615F32BB1807400F0854D /* CurrencyExchangeKMP.xcframework */,
 			);
 			path = debug;
+			sourceTree = "<group>";
+		};
+		8487BDFF2BCD84A40060B600 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8487BE002BCD84BE0060B600 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8487BE002BCD84BE0060B600 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8487BE012BCD852E0060B600 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8491A3B62BC9655300FF9103 /* Scenes */ = {
@@ -335,6 +354,7 @@
 				373615BB2BA8250800F0854D /* CurrencyExchangeView.swift in Sources */,
 				373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */,
 				373615BD2BA8250800F0854D /* Item.swift in Sources */,
+				8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */,
 				8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */,
 				8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */,
 				84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */,
