@@ -15,6 +15,7 @@
 		373615CC2BA8250900F0854D /* iOSKMPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615CB2BA8250900F0854D /* iOSKMPTests.swift */; };
 		373615D62BA8250900F0854D /* iOSKMPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615D52BA8250900F0854D /* iOSKMPUITests.swift */; };
 		373615D82BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */; };
+		3791F9712BCC468F005A0378 /* CurrencyExchangeKMP in Frameworks */ = {isa = PBXBuildFile; productRef = 3791F9702BCC468F005A0378 /* CurrencyExchangeKMP */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3791F9712BCC468F005A0378 /* CurrencyExchangeKMP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +148,9 @@
 			dependencies = (
 			);
 			name = iOSKMP;
+			packageProductDependencies = (
+				3791F9702BCC468F005A0378 /* CurrencyExchangeKMP */,
+			);
 			productName = iOSKMP;
 			productReference = 373615B52BA8250800F0854D /* iOSKMP.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 373615AC2BA8250700F0854D;
+			packageReferences = (
+				3791F96F2BCC468F005A0378 /* XCRemoteSwiftPackageReference "Android-KMP-Template" */,
+			);
 			productRefGroup = 373615B62BA8250800F0854D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -586,6 +594,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3791F96F2BCC468F005A0378 /* XCRemoteSwiftPackageReference "Android-KMP-Template" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Mindera/Android-KMP-Template.git";
+			requirement = {
+				branch = iOS_Framework;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3791F9702BCC468F005A0378 /* CurrencyExchangeKMP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3791F96F2BCC468F005A0378 /* XCRemoteSwiftPackageReference "Android-KMP-Template" */;
+			productName = CurrencyExchangeKMP;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 373615AD2BA8250700F0854D /* Project object */;
 }
