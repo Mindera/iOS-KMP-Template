@@ -3,7 +3,7 @@ import Charts
 
 struct CurrencyExchangeView: View {
     @StateObject private var viewModel = CurrencyExchangeViewModel()
-    @State private var selectedViewMode: CurrencyExchangeViewMode = .list
+    @State private var selectedViewMode: CurrencyExchangeViewMode = .graph
     
     var body: some View {
         VStack {
@@ -27,6 +27,17 @@ struct CurrencyExchangeView: View {
             .pickerStyle(.segmented)
             
             switch selectedViewMode {
+            case .graph:
+                Chart {
+                    ForEach(viewModel.currentDayExhangeRates) { exchangeRate in
+                        LineMark(
+                            x: .value("Code", exchangeRate.code),
+                            y: .value("Rate", exchangeRate.currencyRate)
+                        )
+                    }
+                }
+                .padding()
+                .chartScrollableAxes(.horizontal)
             case .list:
                 List {
                     ForEach(viewModel.lastTenDaysCurrencyExchangeModels) { model in
@@ -41,7 +52,6 @@ struct CurrencyExchangeView: View {
                                         .frame(maxWidth: .infinity, alignment: .trailing)
                                 }
                             }
-                            .scrollIndicators(.hidden)
                         } label: {
                             Text(model.date)
                         }
@@ -49,40 +59,6 @@ struct CurrencyExchangeView: View {
                 }
                 .listStyle(.plain)
                 .scrollIndicators(.hidden)
-            case .graph:
-                if let currentDayExhangeModel = viewModel.currentDayExhangeModel {
-                    Chart {
-                        ForEach(currentDayExhangeModel.exchangeRates) { exchangeRate in
-                            LineMark(
-                                x: .value("Code", exchangeRate.code),
-                                y: .value("Rate", exchangeRate.currencyRate)
-                            )
-                        }
-                    }
-                    .padding()
-                }
-            }
-            TabView {
-                Text("Home")
-                    .tabItem {
-                        Image("FilledCircleIcon")
-                        Text("Gold")
-                    }
-                Text("CHF exchange")
-                    .tabItem {
-                        Image("TriangleIcon")
-                        Text("CHF exchange")
-                    }
-                Text("GBP exchange")
-                    .tabItem {
-                        Image("TriangleIcon")
-                        Text("GBP exchange")
-                    }
-                Text("Settings")
-                    .tabItem {
-                        Image("SettingsIcon")
-                        Text("Settings")
-                    }
             }
         }
     }
