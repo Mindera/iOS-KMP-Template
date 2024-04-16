@@ -8,10 +8,15 @@
 import CurrencyExchangeKMP
 
 class CurrencyExchangeViewModel: ObservableObject {
+    
+    // MARK: - Properties
+    
     @Published var lastTenDaysCurrencyExchangeModels: [CurrencyExchangeModel] = []
     @Published var currentDayExhangeRates: [CurrencyExchangeRateModel] = []
 
     private let coreModel = DIHelper().viewModel
+    
+    // MARK: - Init
     
     init() {
         coreModel.onChangeCurrentDay { newState in
@@ -25,8 +30,8 @@ class CurrencyExchangeViewModel: ObservableObject {
                 self.currentDayExhangeRates = exchangeRates.map {
                     CurrencyExchangeRateModel(
                         code: $0.code,
-                        currency: $0.currency,
-                        currencyRate: $0.currencyRate
+                        currencyName: $0.currency,
+                        exchangeRate: $0.currencyRate
                     )
                 }
             }
@@ -39,12 +44,15 @@ class CurrencyExchangeViewModel: ObservableObject {
                 // TODO: Handle error
             } else {
                 self.lastTenDaysCurrencyExchangeModels = newState.launches.map {
-                    CurrencyExchangeModel(date: $0.effectiveDate,
-                                          exchangeRates: $0.rates.map {
-                        CurrencyExchangeRateModel(code: $0.code,
-                                                  currency: $0.currency,
-                                                  currencyRate: $0.currencyRate)
-                    })
+                    CurrencyExchangeModel(
+                        date: $0.effectiveDate,
+                        exchangeRates: $0.rates.map {
+                            CurrencyExchangeRateModel(
+                                code: $0.code,
+                                currencyName: $0.currency,
+                                exchangeRate: $0.currencyRate)
+                        }
+                    )
                 }
             }
         }

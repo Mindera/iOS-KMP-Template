@@ -38,7 +38,8 @@ struct MenuTabView: View {
             .toolbarBackground(Color.lightYellow, for: .tabBar)
         }
         .tint(.black)
-        .onChange(of: selection) { oldState, newState in
+        .onChange(of: selection) {
+            // TODO: - Remove forcing Home tab once all tabs are implemented
             selection = MenuTab.home
         }
     }

@@ -1,0 +1,39 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%lf" : {
+
+    },
+    "CHF exchange" : {
+      "extractionState" : "manual"
+    },
+    "Currency code" : {
+      "extractionState" : "manual"
+    },
+    "Currency rate" : {
+      "extractionState" : "manual"
+    },
+    "GBP exchange" : {
+      "extractionState" : "manual"
+    },
+    "Gold" : {
+      "extractionState" : "manual"
+    },
+    "Graph view" : {
+      "extractionState" : "manual"
+    },
+    "List view" : {
+      "extractionState" : "manual"
+    },
+    "Mindera" : {
+      "extractionState" : "manual"
+    },
+    "Settings" : {
+      "extractionState" : "manual"
+    }
+  },
+  "version" : "1.0"
+}

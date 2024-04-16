@@ -9,7 +9,7 @@ import Foundation
 
 struct CurrencyExchangeRateModel: Identifiable {
     let code: String
-    let currency: String
-    let currencyRate: Double
+    let currencyName: String
+    let exchangeRate: Double
     let id = UUID()
 }

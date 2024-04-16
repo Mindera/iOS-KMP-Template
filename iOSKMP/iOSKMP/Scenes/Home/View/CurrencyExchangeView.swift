@@ -8,15 +8,15 @@ struct CurrencyExchangeView: View {
     var body: some View {
         VStack {
             HStack {
-                Image("MinderaIcon")
+                Image(Constants.minderaIcon)
                     .resizable()
-                    .frame(width: 50.0, height: 50.0)
+                    .frame(width: Constants.logoSize, height: Constants.logoSize)
                 Text("Mindera")
-                    .font(.system(size: 25.0))
+                    .font(.system(size: Constants.headerFontSize))
             }
             
             Color.appYellow
-                .frame(height: 10.0)
+                .frame(height: Constants.smallPadding)
             
             Picker("", selection: $selectedViewMode) {
                 ForEach(CurrencyExchangeViewMode.allCases) { viewMode in
@@ -31,8 +31,8 @@ struct CurrencyExchangeView: View {
                 Chart {
                     ForEach(viewModel.currentDayExhangeRates) { exchangeRate in
                         LineMark(
-                            x: .value("Code", exchangeRate.code),
-                            y: .value("Rate", exchangeRate.currencyRate)
+                            x: .value("Currency code", exchangeRate.code),
+                            y: .value("Currency rate", exchangeRate.exchangeRate)
                         )
                     }
                 }
@@ -45,10 +45,10 @@ struct CurrencyExchangeView: View {
                             ForEach(model.exchangeRates) { exchangeRate in
                                 HStack {
                                     Text(exchangeRate.code)
-                                        .frame(minWidth: 50, alignment: .leading)
-                                    Text(exchangeRate.currency)
+                                        .frame(minWidth: Constants.currencyCodeWidth, alignment: .leading)
+                                    Text(exchangeRate.currencyName)
                                         .frame(maxWidth: .infinity, alignment: .leading)
-                                    Text("\(exchangeRate.currencyRate)")
+                                    Text("\(exchangeRate.exchangeRate)")
                                         .frame(maxWidth: .infinity, alignment: .trailing)
                                 }
                             }

@@ -5,7 +5,7 @@
 //  Created by Timea Varga on 16.04.2024.
 //
 
-import Foundation
+import SwiftUI
 
 enum MenuTab: String, CaseIterable {
     case home
@@ -15,7 +15,7 @@ enum MenuTab: String, CaseIterable {
 }
 
 extension MenuTab {
-    var title: String {
+    var title: LocalizedStringKey {
         switch self {
         case .home:
             return "Gold"
@@ -24,7 +24,7 @@ extension MenuTab {
         case .GBPExchange:
             return "GBP exchange"
         case .settings:
-            return rawValue.capitalized
+            return "Settings"
         }
     }
     
