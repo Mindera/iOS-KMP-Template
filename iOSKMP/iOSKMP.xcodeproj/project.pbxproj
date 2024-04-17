@@ -114,9 +114,9 @@
 		373615B72BA8250800F0854D /* iOSKMP */ = {
 			isa = PBXGroup;
 			children = (
-				373615B82BA8250800F0854D /* iOSKMPApp.swift */,
 				849906552BCEDF5B002F9845 /* Resources */,
 				8491A3B62BC9655300FF9103 /* Scenes */,
+				84FA60322BD012840020C66E /* Supporting Files */,
 				8499064D2BCEABFC002F9845 /* UIComponents */,
 				8487BDFF2BCD84A40060B600 /* Utilities */,
 			);
@@ -195,8 +195,8 @@
 		8491A3B92BC965C100FF9103 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */,
 				373615BA2BA8250800F0854D /* CurrencyExchangeView.swift */,
+				84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,8 +212,8 @@
 		8499064D2BCEABFC002F9845 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				8499064E2BCEAD13002F9845 /* MenuTabView.swift */,
 				849906502BCEADA8002F9845 /* MenuTab.swift */,
+				8499064E2BCEAD13002F9845 /* MenuTabView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -230,10 +230,18 @@
 			isa = PBXGroup;
 			children = (
 				373615BE2BA8250900F0854D /* Assets.xcassets */,
-				849906562BCEDF76002F9845 /* Localizable.xcstrings */,
 				373615C02BA8250900F0854D /* Preview Content */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		84FA60322BD012840020C66E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				373615B82BA8250800F0854D /* iOSKMPApp.swift */,
+				849906562BCEDF76002F9845 /* Localizable.xcstrings */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
