@@ -11,5 +11,5 @@ struct CurrencyExchangeRateModel: Identifiable {
     let code: String
     let currencyName: String
     let exchangeRate: Double
-    let id = UUID()
+    let id: String
 }

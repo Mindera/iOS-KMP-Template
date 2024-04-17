@@ -10,5 +10,5 @@ import Foundation
 struct CurrencyExchangeModel: Identifiable {
     let date: String
     let exchangeRates: [CurrencyExchangeRateModel]
-    let id = UUID()
+    let id: String
 }

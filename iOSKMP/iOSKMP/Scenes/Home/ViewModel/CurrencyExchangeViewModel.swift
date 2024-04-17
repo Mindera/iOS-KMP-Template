@@ -31,7 +31,8 @@ class CurrencyExchangeViewModel: ObservableObject {
                     CurrencyExchangeRateModel(
                         code: $0.code,
                         currencyName: $0.currency,
-                        exchangeRate: $0.currencyRate
+                        exchangeRate: $0.currencyRate, 
+                        id: $0.id
                     )
                 }
             }
@@ -50,8 +51,10 @@ class CurrencyExchangeViewModel: ObservableObject {
                             CurrencyExchangeRateModel(
                                 code: $0.code,
                                 currencyName: $0.currency,
-                                exchangeRate: $0.currencyRate)
-                        }
+                                exchangeRate: $0.currencyRate, 
+                                id: $0.id)
+                        },
+                        id: $0.no
                     )
                 }
             }
