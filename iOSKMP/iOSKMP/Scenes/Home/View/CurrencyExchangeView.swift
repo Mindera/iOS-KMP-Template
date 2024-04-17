@@ -2,7 +2,7 @@ import SwiftUI
 import Charts
 
 struct CurrencyExchangeView: View {
-    @StateObject private var viewModel = CurrencyExchangeViewModel()
+    @State private var viewModel = CurrencyExchangeViewModel()
     @State private var selectedViewMode: CurrencyExchangeViewMode = .graph
     
     var body: some View {
