@@ -17,6 +17,9 @@
 		373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */; };
 		3791F9712BCC468F005A0378 /* CurrencyExchangeKMP in Frameworks */ = {isa = PBXBuildFile; productRef = 3791F9702BCC468F005A0378 /* CurrencyExchangeKMP */; };
 		8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487BE012BCD852E0060B600 /* Color+Extensions.swift */; };
+		84903B152BD135A700B2F094 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84903B142BD135A700B2F094 /* SettingsView.swift */; };
+		84903B192BD17A5900B2F094 /* LanguageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84903B182BD17A5900B2F094 /* LanguageType.swift */; };
+		84903B1B2BD189DE00B2F094 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84903B1A2BD189DE00B2F094 /* UIApplication+Extensions.swift */; };
 		8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A3BB2BC9672600FF9103 /* CurrencyExchangeRateModel.swift */; };
 		8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A3BD2BC96AE600FF9103 /* CurrencyExchangeModel.swift */; };
 		8499064F2BCEAD13002F9845 /* MenuTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499064E2BCEAD13002F9845 /* MenuTabView.swift */; };
@@ -56,6 +59,9 @@
 		373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewModel.swift; sourceTree = "<group>"; };
 		8487BE012BCD852E0060B600 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		84903B142BD135A700B2F094 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		84903B182BD17A5900B2F094 /* LanguageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageType.swift; sourceTree = "<group>"; };
+		84903B1A2BD189DE00B2F094 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		8491A3BB2BC9672600FF9103 /* CurrencyExchangeRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeRateModel.swift; sourceTree = "<group>"; };
 		8491A3BD2BC96AE600FF9103 /* CurrencyExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeModel.swift; sourceTree = "<group>"; };
 		8499064E2BCEAD13002F9845 /* MenuTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabView.swift; sourceTree = "<group>"; };
@@ -161,14 +167,41 @@
 			isa = PBXGroup;
 			children = (
 				8487BE012BCD852E0060B600 /* Color+Extensions.swift */,
+				84903B1A2BD189DE00B2F094 /* UIApplication+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84903B132BD1358700B2F094 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				84903B172BD17A2500B2F094 /* Model */,
+				84903B162BD17A1E00B2F094 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		84903B162BD17A1E00B2F094 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84903B142BD135A700B2F094 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84903B172BD17A2500B2F094 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84903B182BD17A5900B2F094 /* LanguageType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8491A3B62BC9655300FF9103 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				8491A3B72BC9657900FF9103 /* Home */,
+				84903B132BD1358700B2F094 /* Settings */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -385,12 +418,15 @@
 				373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */,
 				8499064F2BCEAD13002F9845 /* MenuTabView.swift in Sources */,
 				8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */,
+				84903B1B2BD189DE00B2F094 /* UIApplication+Extensions.swift in Sources */,
 				849906512BCEADA8002F9845 /* MenuTab.swift in Sources */,
 				8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */,
 				8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */,
+				84903B192BD17A5900B2F094 /* LanguageType.swift in Sources */,
 				84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */,
 				849906542BCED6D4002F9845 /* Constants.swift in Sources */,
 				373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */,
+				84903B152BD135A700B2F094 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

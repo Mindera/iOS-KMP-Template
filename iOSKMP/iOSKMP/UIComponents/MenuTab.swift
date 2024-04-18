@@ -9,8 +9,6 @@ import SwiftUI
 
 enum MenuTab: String, CaseIterable {
     case home
-    case CHFExchange
-    case GBPExchange
     case settings
 }
 
@@ -18,11 +16,7 @@ extension MenuTab {
     var title: LocalizedStringKey {
         switch self {
         case .home:
-            return "Gold"
-        case .CHFExchange:
-            return "CHF exchange"
-        case .GBPExchange:
-            return "GBP exchange"
+            return "Currency exchange"
         case .settings:
             return "Settings"
         }
@@ -31,8 +25,6 @@ extension MenuTab {
     var imageName: String {
         switch self {
         case .home:
-            return "circle.fill"
-        case .CHFExchange, .GBPExchange:
             return "arrowtriangle.up"
         case .settings:
             return "gearshape"

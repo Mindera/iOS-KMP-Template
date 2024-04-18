@@ -16,21 +16,13 @@ struct MenuTabView: View {
                 CurrencyExchangeView()
                     .tabItem {
                         Label(MenuTab.home.title, systemImage: MenuTab.home.imageName)
+                            .environment(\.symbolVariants, .none)
                     }
                     .tag(MenuTab.home)
-                Text("")
-                    .tabItem {
-                        Label(MenuTab.CHFExchange.title, systemImage: MenuTab.CHFExchange.imageName)
-                    }
-                    .tag(MenuTab.CHFExchange)
-                Text("")
-                    .tabItem {
-                        Label(MenuTab.GBPExchange.title, systemImage: MenuTab.GBPExchange.imageName)
-                    }
-                    .tag(MenuTab.GBPExchange)
-                Text("")
+                SettingsView()
                     .tabItem {
                         Label(MenuTab.settings.title, systemImage: MenuTab.settings.imageName)
+                            .environment(\.symbolVariants, .none)
                     }
                     .tag(MenuTab.settings)
             }
@@ -38,10 +30,6 @@ struct MenuTabView: View {
             .toolbarBackground(Color.lightYellow, for: .tabBar)
         }
         .tint(.black)
-        .onChange(of: selection) {
-            // TODO: - Remove forcing Home tab once all tabs are implemented
-            selection = MenuTab.home
-        }
     }
 }
 

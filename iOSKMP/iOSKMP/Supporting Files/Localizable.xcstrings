@@ -4,7 +4,16 @@
     "" : {
 
     },
+    "..." : {
+
+    },
     "%lf" : {
+
+    },
+    "App Size" : {
+
+    },
+    "App Version" : {
 
     },
     "CHF exchange" : {
@@ -13,23 +22,44 @@
     "Currency code" : {
       "extractionState" : "manual"
     },
+    "Currency exchange" : {
+      "extractionState" : "manual"
+    },
     "Currency rate" : {
       "extractionState" : "manual"
+    },
+    "Dark Mode" : {
+
+    },
+    "English" : {
+
     },
     "GBP exchange" : {
       "extractionState" : "manual"
     },
-    "Gold" : {
-      "extractionState" : "manual"
+    "GitHub" : {
+
     },
     "Graph view" : {
       "extractionState" : "manual"
+    },
+    "Language" : {
+
     },
     "List view" : {
       "extractionState" : "manual"
     },
     "Mindera" : {
       "extractionState" : "manual"
+    },
+    "Open Source" : {
+
+    },
+    "Portuguese" : {
+
+    },
+    "Repository" : {
+
     },
     "Settings" : {
       "extractionState" : "manual"
