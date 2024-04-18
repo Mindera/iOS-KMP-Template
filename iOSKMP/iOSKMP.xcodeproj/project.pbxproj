@@ -8,14 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615B82BA8250800F0854D /* iOSKMPApp.swift */; };
-		373615BB2BA8250800F0854D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615BA2BA8250800F0854D /* ContentView.swift */; };
-		373615BD2BA8250800F0854D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615BC2BA8250800F0854D /* Item.swift */; };
+		373615BB2BA8250800F0854D /* CurrencyExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615BA2BA8250800F0854D /* CurrencyExchangeView.swift */; };
 		373615BF2BA8250900F0854D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373615BE2BA8250900F0854D /* Assets.xcassets */; };
 		373615C22BA8250900F0854D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373615C12BA8250900F0854D /* Preview Assets.xcassets */; };
 		373615CC2BA8250900F0854D /* iOSKMPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615CB2BA8250900F0854D /* iOSKMPTests.swift */; };
 		373615D62BA8250900F0854D /* iOSKMPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615D52BA8250900F0854D /* iOSKMPUITests.swift */; };
 		373615D82BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */; };
+		373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */; };
 		3791F9712BCC468F005A0378 /* CurrencyExchangeKMP in Frameworks */ = {isa = PBXBuildFile; productRef = 3791F9702BCC468F005A0378 /* CurrencyExchangeKMP */; };
+		8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487BE012BCD852E0060B600 /* Color+Extensions.swift */; };
+		8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A3BB2BC9672600FF9103 /* CurrencyExchangeRateModel.swift */; };
+		8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A3BD2BC96AE600FF9103 /* CurrencyExchangeModel.swift */; };
+		8499064F2BCEAD13002F9845 /* MenuTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499064E2BCEAD13002F9845 /* MenuTabView.swift */; };
+		849906512BCEADA8002F9845 /* MenuTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849906502BCEADA8002F9845 /* MenuTab.swift */; };
+		849906542BCED6D4002F9845 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849906532BCED6D4002F9845 /* Constants.swift */; };
+		849906572BCEDF76002F9845 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 849906562BCEDF76002F9845 /* Localizable.xcstrings */; };
+		84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +46,7 @@
 /* Begin PBXFileReference section */
 		373615B52BA8250800F0854D /* iOSKMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		373615B82BA8250800F0854D /* iOSKMPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPApp.swift; sourceTree = "<group>"; };
-		373615BA2BA8250800F0854D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		373615BC2BA8250800F0854D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		373615BA2BA8250800F0854D /* CurrencyExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeView.swift; sourceTree = "<group>"; };
 		373615BE2BA8250900F0854D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		373615C12BA8250900F0854D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		373615C72BA8250900F0854D /* iOSKMPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSKMPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +54,15 @@
 		373615D12BA8250900F0854D /* iOSKMPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSKMPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		373615D52BA8250900F0854D /* iOSKMPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPUITests.swift; sourceTree = "<group>"; };
 		373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewModel.swift; sourceTree = "<group>"; };
+		8487BE012BCD852E0060B600 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		8491A3BB2BC9672600FF9103 /* CurrencyExchangeRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeRateModel.swift; sourceTree = "<group>"; };
+		8491A3BD2BC96AE600FF9103 /* CurrencyExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeModel.swift; sourceTree = "<group>"; };
+		8499064E2BCEAD13002F9845 /* MenuTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabView.swift; sourceTree = "<group>"; };
+		849906502BCEADA8002F9845 /* MenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTab.swift; sourceTree = "<group>"; };
+		849906532BCED6D4002F9845 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		849906562BCEDF76002F9845 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +114,11 @@
 		373615B72BA8250800F0854D /* iOSKMP */ = {
 			isa = PBXGroup;
 			children = (
-				373615B82BA8250800F0854D /* iOSKMPApp.swift */,
-				373615BA2BA8250800F0854D /* ContentView.swift */,
-				373615BC2BA8250800F0854D /* Item.swift */,
-				373615BE2BA8250900F0854D /* Assets.xcassets */,
-				373615C02BA8250900F0854D /* Preview Content */,
+				849906552BCEDF5B002F9845 /* Resources */,
+				8491A3B62BC9655300FF9103 /* Scenes */,
+				84FA60322BD012840020C66E /* Supporting Files */,
+				8499064D2BCEABFC002F9845 /* UIComponents */,
+				8487BDFF2BCD84A40060B600 /* Utilities */,
 			);
 			path = iOSKMP;
 			sourceTree = "<group>";
@@ -130,6 +146,102 @@
 				373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */,
 			);
 			path = iOSKMPUITests;
+			sourceTree = "<group>";
+		};
+		8487BDFF2BCD84A40060B600 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				849906522BCED6C0002F9845 /* Constants */,
+				8487BE002BCD84BE0060B600 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8487BE002BCD84BE0060B600 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8487BE012BCD852E0060B600 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8491A3B62BC9655300FF9103 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8491A3B72BC9657900FF9103 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8491A3B72BC9657900FF9103 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8491A3B82BC965B700FF9103 /* Model */,
+				8491A3B92BC965C100FF9103 /* View */,
+				8491A3BA2BC965D000FF9103 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8491A3B82BC965B700FF9103 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8491A3BD2BC96AE600FF9103 /* CurrencyExchangeModel.swift */,
+				8491A3BB2BC9672600FF9103 /* CurrencyExchangeRateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8491A3B92BC965C100FF9103 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				373615BA2BA8250800F0854D /* CurrencyExchangeView.swift */,
+				84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8491A3BA2BC965D000FF9103 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8499064D2BCEABFC002F9845 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				849906502BCEADA8002F9845 /* MenuTab.swift */,
+				8499064E2BCEAD13002F9845 /* MenuTabView.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		849906522BCED6C0002F9845 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				849906532BCED6D4002F9845 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		849906552BCEDF5B002F9845 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				373615BE2BA8250900F0854D /* Assets.xcassets */,
+				373615C02BA8250900F0854D /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		84FA60322BD012840020C66E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				373615B82BA8250800F0854D /* iOSKMPApp.swift */,
+				849906562BCEDF76002F9845 /* Localizable.xcstrings */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +356,7 @@
 			files = (
 				373615C22BA8250900F0854D /* Preview Assets.xcassets in Resources */,
 				373615BF2BA8250900F0854D /* Assets.xcassets in Resources */,
+				849906572BCEDF76002F9845 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,8 +381,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				373615BB2BA8250800F0854D /* ContentView.swift in Sources */,
-				373615BD2BA8250800F0854D /* Item.swift in Sources */,
+				373615BB2BA8250800F0854D /* CurrencyExchangeView.swift in Sources */,
+				373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */,
+				8499064F2BCEAD13002F9845 /* MenuTabView.swift in Sources */,
+				8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */,
+				849906512BCEADA8002F9845 /* MenuTab.swift in Sources */,
+				8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */,
+				8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */,
+				84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */,
+				849906542BCED6D4002F9845 /* Constants.swift in Sources */,
 				373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +553,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iOSKMP/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"iOSKMP/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -461,7 +581,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iOSKMP/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"iOSKMP/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -600,7 +720,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Mindera/Android-KMP-Template.git";
 			requirement = {
-				branch = iOS_Framework;
+				branch = iOS_Framework_Debug;
 				kind = branch;
 			};
 		};
