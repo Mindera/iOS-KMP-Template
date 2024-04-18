@@ -720,7 +720,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Mindera/Android-KMP-Template.git";
 			requirement = {
-				branch = iOS_Framework;
+				branch = iOS_Framework_Debug;
 				kind = branch;
 			};
 		};
