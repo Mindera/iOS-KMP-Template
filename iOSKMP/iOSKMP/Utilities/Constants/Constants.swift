@@ -22,4 +22,8 @@ enum Constants {
     // MARK: - Icon
     
     static let minderaIcon: String = "MinderaIcon"
+    
+    // MARK: - String
+    
+    static let repositoryURL: String = "https://github.com/Mindera/iOS-KMP-Template"
 }

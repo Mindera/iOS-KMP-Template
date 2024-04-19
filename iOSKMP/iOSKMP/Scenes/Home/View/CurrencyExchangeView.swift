@@ -20,7 +20,8 @@ struct CurrencyExchangeView: View {
             
             Picker("", selection: $selectedViewMode) {
                 ForEach(CurrencyExchangeViewMode.allCases) { viewMode in
-                    Text(viewMode.title).tag(viewMode)
+                    Text(viewMode.title)
+                        .tag(viewMode)
                 }
             }
             .padding()

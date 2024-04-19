@@ -13,13 +13,16 @@ struct SettingsView: View {
     @State private var repositoryIndex = 0
     @State private var openSourceIndex = 0
     
+    private let gitHubTitle: LocalizedStringKey = "GitHub"
+    
     var body: some View {
         NavigationView {
             Form {
                 Toggle("Dark Mode", isOn: $isDarkMode)
                 Picker("Language", selection: $selectedLanguage) {
                     ForEach(LanguageType.allCases) { languageType in
-                        Text(languageType.name).tag(languageType)
+                        Text(languageType.name)
+                            .tag(languageType)
                     }
                 }
                 .pickerStyle(.navigationLink)
@@ -33,10 +36,13 @@ struct SettingsView: View {
                     Spacer()
                     Text("v " + UIApplication.appVersion)
                 }
-                Picker("Repository", selection: $repositoryIndex) {
-                    Text("GitHub")
+                Link(destination: URL(string: Constants.repositoryURL)!) {
+                    Picker("Repository", selection: $repositoryIndex) {
+                        Text(gitHubTitle)
+                            .tag(0)
+                    }
+                    .pickerStyle(.navigationLink)
                 }
-                .pickerStyle(.navigationLink)
                 Picker("Open Source", selection: $openSourceIndex) {
                 }
                 .pickerStyle(.navigationLink)
