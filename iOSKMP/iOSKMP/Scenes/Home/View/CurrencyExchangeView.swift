@@ -31,8 +31,8 @@ struct CurrencyExchangeView: View {
                 Chart {
                     ForEach(viewModel.currentDayExhangeRates) { exchangeRate in
                         LineMark(
-                            x: .value("Currency code", exchangeRate.code),
-                            y: .value("Currency rate", exchangeRate.exchangeRate)
+                            x: .value("", exchangeRate.code),
+                            y: .value("", exchangeRate.exchangeRate)
                         )
                     }
                 }
