@@ -27,9 +27,8 @@ struct MenuTabView: View {
                     .tag(MenuTab.settings)
             }
             .toolbarBackground(.visible, for: .tabBar)
-            .toolbarBackground(Color.lightYellow, for: .tabBar)
+            .toolbarBackground(Color.baseColor, for: .tabBar)
         }
-        .tint(.black)
     }
 }
 

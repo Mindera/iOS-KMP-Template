@@ -10,6 +10,8 @@ import CurrencyExchangeKMP
 
 @main
 struct iOSKMPApp: App {
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    
     init() {
         IOSKoinHelperKt.doInitKoin()
     }
@@ -17,6 +19,8 @@ struct iOSKMPApp: App {
     var body: some Scene {
         WindowGroup {
             MenuTabView()
+                .environment(\.colorScheme, isDarkMode ? .dark : .light)
+                .preferredColorScheme(isDarkMode ? .dark : .light)
         }
     }
 }

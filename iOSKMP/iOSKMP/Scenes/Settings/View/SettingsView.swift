@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var isDarkModeSelected = false
+    @AppStorage("isDarkMode") private var isDarkMode = true
     @State private var selectedLanguage: LanguageType = .english
     @State private var repositoryIndex = 0
     @State private var openSourceIndex = 0
@@ -16,7 +16,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Toggle("Dark Mode", isOn: $isDarkModeSelected)
+                Toggle("Dark Mode", isOn: $isDarkMode)
                 Picker("Language", selection: $selectedLanguage) {
                     ForEach(LanguageType.allCases) { languageType in
                         Text(languageType.name).tag(languageType)
