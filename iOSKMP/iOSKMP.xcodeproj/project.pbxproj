@@ -26,6 +26,7 @@
 		849906512BCEADA8002F9845 /* MenuTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849906502BCEADA8002F9845 /* MenuTab.swift */; };
 		849906542BCED6D4002F9845 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849906532BCED6D4002F9845 /* Constants.swift */; };
 		849906572BCEDF76002F9845 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 849906562BCEDF76002F9845 /* Localizable.xcstrings */; };
+		84AF0CEF2BD3DE75001C8412 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF0CEE2BD3DE75001C8412 /* HeaderView.swift */; };
 		84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		849906502BCEADA8002F9845 /* MenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTab.swift; sourceTree = "<group>"; };
 		849906532BCED6D4002F9845 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		849906562BCEDF76002F9845 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		84AF0CEE2BD3DE75001C8412 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +249,7 @@
 			children = (
 				849906502BCEADA8002F9845 /* MenuTab.swift */,
 				8499064E2BCEAD13002F9845 /* MenuTabView.swift */,
+				84AF0CEE2BD3DE75001C8412 /* HeaderView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				849906512BCEADA8002F9845 /* MenuTab.swift in Sources */,
 				8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */,
 				8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */,
+				84AF0CEF2BD3DE75001C8412 /* HeaderView.swift in Sources */,
 				84903B192BD17A5900B2F094 /* LanguageType.swift in Sources */,
 				84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */,
 				849906542BCED6D4002F9845 /* Constants.swift in Sources */,

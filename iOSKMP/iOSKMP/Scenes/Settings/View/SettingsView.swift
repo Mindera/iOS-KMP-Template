@@ -19,6 +19,7 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 Toggle("Dark Mode", isOn: $isDarkMode)
+                
                 Picker("Language", selection: $selectedLanguage) {
                     ForEach(LanguageType.allCases) { languageType in
                         Text(languageType.name)
@@ -26,16 +27,19 @@ struct SettingsView: View {
                     }
                 }
                 .pickerStyle(.navigationLink)
+                
                 HStack {
                     Text("App Size")
                     Spacer()
                     Text("...")
                 }
+                
                 HStack {
                     Text("App Version")
                     Spacer()
                     Text("v " + UIApplication.appVersion)
                 }
+                
                 Link(destination: URL(string: Constants.repositoryURL)!) {
                     Picker("Repository", selection: $repositoryIndex) {
                         Text(gitHubTitle)
@@ -43,6 +47,7 @@ struct SettingsView: View {
                     }
                     .pickerStyle(.navigationLink)
                 }
+                
                 Picker("Open Source", selection: $openSourceIndex) {
                 }
                 .pickerStyle(.navigationLink)
