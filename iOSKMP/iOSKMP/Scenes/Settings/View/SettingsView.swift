@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode = true
-    @State private var selectedLanguage: LanguageType = .english
+    @AppStorage("locale") private var selectedLanguage: String = LanguageType.english.identifier
     @State private var repositoryIndex = 0
     @State private var openSourceIndex = 0
     
@@ -22,7 +22,7 @@ struct SettingsView: View {
                 Picker("Language", selection: $selectedLanguage) {
                     ForEach(LanguageType.allCases) { languageType in
                         Text(languageType.name)
-                            .tag(languageType)
+                            .tag(languageType.identifier)
                     }
                 }
                 .pickerStyle(.navigationLink)
@@ -47,6 +47,7 @@ struct SettingsView: View {
                 }
                 .pickerStyle(.navigationLink)
             }
+            .navigationBarTitle("")
         }
     }
 }

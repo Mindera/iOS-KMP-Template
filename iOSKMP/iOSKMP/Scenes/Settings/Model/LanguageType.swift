@@ -22,4 +22,13 @@ extension LanguageType {
             return "Portuguese"
         }
     }
+    
+    var identifier: String {
+        switch self {
+        case .english:
+            return "en"
+        case .portuguese:
+            return "pt-PT"
+        }
+    }
 }
