@@ -10,6 +10,8 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode = true
     @AppStorage("locale") private var selectedLanguage: String = LanguageType.english.identifier
+    
+    @State private var viewModel = SettingsViewModel()
     @State private var repositoryIndex = 0
     @State private var openSourceIndex = 0
     
@@ -31,7 +33,7 @@ struct SettingsView: View {
                 HStack {
                     Text("App Size")
                     Spacer()
-                    Text("...")
+                    Text(viewModel.appSize)
                 }
                 
                 HStack {

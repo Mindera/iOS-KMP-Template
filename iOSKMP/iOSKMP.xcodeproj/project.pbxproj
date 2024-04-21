@@ -27,6 +27,7 @@
 		849906542BCED6D4002F9845 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849906532BCED6D4002F9845 /* Constants.swift */; };
 		849906572BCEDF76002F9845 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 849906562BCEDF76002F9845 /* Localizable.xcstrings */; };
 		84AF0CEF2BD3DE75001C8412 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF0CEE2BD3DE75001C8412 /* HeaderView.swift */; };
+		84AF0CF22BD3E9B5001C8412 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF0CF12BD3E9B5001C8412 /* SettingsViewModel.swift */; };
 		84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		849906532BCED6D4002F9845 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		849906562BCEDF76002F9845 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		84AF0CEE2BD3DE75001C8412 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		84AF0CF12BD3E9B5001C8412 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +181,7 @@
 			children = (
 				84903B172BD17A2500B2F094 /* Model */,
 				84903B162BD17A1E00B2F094 /* View */,
+				84AF0CF02BD3E997001C8412 /* ViewModel */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -269,6 +272,14 @@
 				373615C02BA8250900F0854D /* Preview Content */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		84AF0CF02BD3E997001C8412 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84AF0CF12BD3E9B5001C8412 /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		84FA60322BD012840020C66E /* Supporting Files */ = {
@@ -423,6 +434,7 @@
 				8499064F2BCEAD13002F9845 /* MenuTabView.swift in Sources */,
 				8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */,
 				84903B1B2BD189DE00B2F094 /* UIApplication+Extensions.swift in Sources */,
+				84AF0CF22BD3E9B5001C8412 /* SettingsViewModel.swift in Sources */,
 				849906512BCEADA8002F9845 /* MenuTab.swift in Sources */,
 				8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */,
 				8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */,
