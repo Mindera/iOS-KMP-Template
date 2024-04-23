@@ -19,16 +19,13 @@ import Foundation
     
     private func calculateAppSize() -> String {
         let bundlePath = Bundle.main.bundlePath
-        let bundleArray = FileManager.default.subpaths(atPath: bundlePath)
         var folderSize: Int64 = 0
         
-        for file in bundleArray! {
-            do {
-                let attr = try FileManager.default.attributesOfItem(atPath: bundlePath + "/" + file )
-                let fileSize = attr[FileAttributeKey.size] as? Int64 ?? 0
-                folderSize = folderSize + fileSize
-            } catch {
-            }
+        let directoryEnumerator = FileManager.default.enumerator(atPath: bundlePath)
+
+        while let file = directoryEnumerator?.nextObject() as? String {
+            let fileSize = directoryEnumerator?.fileAttributes?[.size] as? Int64 ?? 0
+            folderSize = folderSize + fileSize
         }
         
         let formatter = ByteCountFormatter()
