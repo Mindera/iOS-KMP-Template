@@ -16,8 +16,8 @@ import Foundation
     // MARK: - Init
     
     init() {
-        DispatchQueue.global(qos: .background).async {
-            self.calculateAppSize()
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.calculateAppSize()
         }
     }
     
@@ -37,8 +37,8 @@ import Foundation
         formatter.allowedUnits = [.useMB, .useGB]
         formatter.countStyle = .file
         
-        DispatchQueue.main.async {
-            self.appSize = formatter.string(fromByteCount: Int64(folderSize))
+        DispatchQueue.main.async { [weak self] in
+            self?.appSize = formatter.string(fromByteCount: Int64(folderSize))
         }
     }
 }

@@ -26,7 +26,7 @@ import CurrencyExchangeKMP
     // MARK: - Private methods
     
     private func observeCurrentDateData() {
-        coreModel.onChangeCurrentDay { newState in
+        coreModel.onChangeCurrentDay { [weak self] newState in
             if newState.loading {
                 // TODO: Handle loading state
             } else if newState.error != nil {
@@ -34,7 +34,7 @@ import CurrencyExchangeKMP
             } else {
                 guard let exchangeRates = newState.launches.first?.rates else { return }
                 
-                self.currentDayExhangeRates = exchangeRates.map {
+                self?.currentDayExhangeRates = exchangeRates.map {
                     CurrencyExchangeRateModel(
                         code: $0.code,
                         currencyName: $0.currency,
@@ -47,13 +47,13 @@ import CurrencyExchangeKMP
     }
     
     private func observeLastTenDaysData() {
-        coreModel.onChangeLastTen { newState in
+        coreModel.onChangeLastTen { [weak self] newState in
             if newState.loading {
                 // TODO: Handle loading state
             } else if newState.error != nil {
                 // TODO: Handle error
             } else {
-                self.lastTenDaysCurrencyExchangeModels = newState.launches.map {
+                self?.lastTenDaysCurrencyExchangeModels = newState.launches.map {
                     CurrencyExchangeModel(
                         date: $0.effectiveDate,
                         exchangeRates: $0.rates.map {
