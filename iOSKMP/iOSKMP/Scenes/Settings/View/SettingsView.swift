@@ -13,7 +13,6 @@ struct SettingsView: View {
     
     @State private var viewModel = SettingsViewModel()
     @State private var repositoryIndex = 0
-    @State private var openSourceIndex = 0
     
     private let gitHubTitle: LocalizedStringKey = "GitHub"
     
@@ -50,9 +49,10 @@ struct SettingsView: View {
                     .pickerStyle(.navigationLink)
                 }
                 
-                Picker("Open Source", selection: $openSourceIndex) {
+                // TODO: Add open source screen instead of Text("Open Source"), JIRA ticket #MKMPT-15
+                NavigationLink(destination: Text("Open Source")) {
+                    Text("Open Source")
                 }
-                .pickerStyle(.navigationLink)
             }
             .navigationBarTitle("")
         }
