@@ -11,19 +11,24 @@ import Foundation
     
     // MARK: - Properties
     
-    var appSize: String {
-        calculateAppSize()
+    var appSize: String = ""
+    
+    // MARK: - Init
+    
+    init() {
+        DispatchQueue.global(qos: .background).async {
+            self.calculateAppSize()
+        }
     }
     
     // MARK: - Private methods
     
-    private func calculateAppSize() -> String {
+    private func calculateAppSize() {
         let bundlePath = Bundle.main.bundlePath
-        var folderSize: Int64 = 0
-        
         let directoryEnumerator = FileManager.default.enumerator(atPath: bundlePath)
+        var folderSize: Int64 = 0
 
-        while let file = directoryEnumerator?.nextObject() as? String {
+        while directoryEnumerator?.nextObject() != nil {
             let fileSize = directoryEnumerator?.fileAttributes?[.size] as? Int64 ?? 0
             folderSize = folderSize + fileSize
         }
@@ -32,6 +37,8 @@ import Foundation
         formatter.allowedUnits = [.useMB, .useGB]
         formatter.countStyle = .file
         
-        return formatter.string(fromByteCount: Int64(folderSize))
+        DispatchQueue.main.async {
+            self.appSize = formatter.string(fromByteCount: Int64(folderSize))
+        }
     }
 }
