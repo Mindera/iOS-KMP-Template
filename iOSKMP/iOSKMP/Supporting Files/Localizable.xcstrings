@@ -7,32 +7,135 @@
     "%lf" : {
 
     },
-    "CHF exchange" : {
-      "extractionState" : "manual"
+    "App Size" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamanho do aplicativo"
+          }
+        }
+      }
     },
-    "Currency code" : {
-      "extractionState" : "manual"
+    "App Version" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versão do aplicativo"
+          }
+        }
+      }
     },
-    "Currency rate" : {
-      "extractionState" : "manual"
+    "Currency exchange" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Câmbio monetário"
+          }
+        }
+      }
     },
-    "GBP exchange" : {
-      "extractionState" : "manual"
+    "Dark Mode" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo escuro"
+          }
+        }
+      }
     },
-    "Gold" : {
-      "extractionState" : "manual"
+    "English" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inglês"
+          }
+        }
+      }
+    },
+    "GitHub" : {
+
     },
     "Graph view" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualização de gráfico"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idioma"
+          }
+        }
+      }
     },
     "List view" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualização de lista"
+          }
+        }
+      }
     },
     "Mindera" : {
       "extractionState" : "manual"
     },
+    "Open Source" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código aberto"
+          }
+        }
+      }
+    },
+    "Portuguese" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Português"
+          }
+        }
+      }
+    },
+    "Repository" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repositório"
+          }
+        }
+      }
+    },
     "Settings" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

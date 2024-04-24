@@ -11,36 +11,27 @@ struct MenuTabView: View {
     @State private var selection = MenuTab.home
     
     var body: some View {
-        TabView(selection: $selection) {
-            Group {
-                CurrencyExchangeView()
-                    .tabItem {
-                        Label(MenuTab.home.title, systemImage: MenuTab.home.imageName)
-                    }
-                    .tag(MenuTab.home)
-                Text("")
-                    .tabItem {
-                        Label(MenuTab.CHFExchange.title, systemImage: MenuTab.CHFExchange.imageName)
-                    }
-                    .tag(MenuTab.CHFExchange)
-                Text("")
-                    .tabItem {
-                        Label(MenuTab.GBPExchange.title, systemImage: MenuTab.GBPExchange.imageName)
-                    }
-                    .tag(MenuTab.GBPExchange)
-                Text("")
-                    .tabItem {
-                        Label(MenuTab.settings.title, systemImage: MenuTab.settings.imageName)
-                    }
-                    .tag(MenuTab.settings)
+        VStack {
+            HeaderView()
+            
+            TabView(selection: $selection) {
+                Group {
+                    CurrencyExchangeView()
+                        .tabItem {
+                            Label(MenuTab.home.title, systemImage: MenuTab.home.imageName)
+                                .environment(\.symbolVariants, .none)
+                        }
+                        .tag(MenuTab.home)
+                    SettingsView()
+                        .tabItem {
+                            Label(MenuTab.settings.title, systemImage: MenuTab.settings.imageName)
+                                .environment(\.symbolVariants, .none)
+                        }
+                        .tag(MenuTab.settings)
+                }
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarBackground(Color.baseColor, for: .tabBar)
             }
-            .toolbarBackground(.visible, for: .tabBar)
-            .toolbarBackground(Color.lightYellow, for: .tabBar)
-        }
-        .tint(.black)
-        .onChange(of: selection) {
-            // TODO: - Remove forcing Home tab once all tabs are implemented
-            selection = MenuTab.home
         }
     }
 }
