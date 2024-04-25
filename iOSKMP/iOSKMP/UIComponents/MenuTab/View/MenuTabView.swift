@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct MenuTabView: View {
-    @State private var selection = MenuTab.home
+    @State private var viewModel: MenuTabViewModel
+    
+    init(viewModel: MenuTabViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
             HeaderView()
             
-            TabView(selection: $selection) {
+            TabView(selection: $viewModel.selectedTab) {
                 Group {
                     CurrencyExchangeView()
                         .tabItem {
@@ -31,11 +35,10 @@ struct MenuTabView: View {
                 }
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarBackground(Color.baseColor, for: .tabBar)
+                .onChange(of: viewModel.selectedTab) { oldValue, newValue in
+                    viewModel.selectTab(newValue)
+                }
             }
         }
     }
-}
-
-#Preview {
-    MenuTabView()
 }
