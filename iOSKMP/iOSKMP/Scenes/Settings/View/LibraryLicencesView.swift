@@ -10,14 +10,14 @@ import SwiftUI
 import AcknowList
 
 struct LibraryLicencesView: View {
-   @State private var viewModel = LibraryLicencesViewModel()
-
-   var body: some View {
-      NavigationStack {
-          AcknowListSwiftUIView(acknowledgements:viewModel.acknowledgements)
-                  .navigationBarHidden(true)
-     }
-      .navigationTitle("Acknowledgements")
+    @State private var viewModel = LibraryLicencesViewModel()
+    
+    var body: some View {
+        NavigationStack {
+            AcknowListSwiftUIView(acknowledgements:viewModel.acknowledgements)
+                .navigationBarHidden(true)
+        }
+        .navigationTitle("Acknowledgements")
     }
 }
 

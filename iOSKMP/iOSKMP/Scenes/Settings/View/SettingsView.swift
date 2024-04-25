@@ -49,9 +49,9 @@ struct SettingsView: View {
                     .pickerStyle(.navigationLink)
                 }
                 
-                    NavigationLink(destination: LibraryLicencesView()) {
-                        Text("Open Source")
-                    }
+                NavigationLink(destination: LibraryLicencesView()) {
+                    Text("Open Source")
+                }
             }
             .navigationBarTitle("")
         }
