@@ -10,7 +10,7 @@ import AcknowList
 
 @Observable class LibraryLicencesViewModel {
     
-    var acknowledgements: [Acknow]?
+    var acknowledgements = [Acknow]()
 
        init() {
            loadAcknowledgements()
@@ -20,7 +20,6 @@ import AcknowList
             guard let url = Bundle.main.url(forResource: "Package", withExtension: "resolved"),
                   let data = try? Data(contentsOf: url),
                   let acknowList = try? AcknowPackageDecoder().decode(from: data) else {
-                acknowledgements = nil
                 return
             }
             acknowledgements = acknowList.acknowledgements

@@ -11,7 +11,6 @@
 		371B33C02BD94E1E00192ED6 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 371B33BF2BD94E1E00192ED6 /* Package.resolved */; };
 		371B33C22BDA633B00192ED6 /* LibraryLicencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371B33C12BDA633B00192ED6 /* LibraryLicencesView.swift */; };
 		371B33C42BDA638800192ED6 /* LibraryLicencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371B33C32BDA638800192ED6 /* LibraryLicencesViewModel.swift */; };
-		371B33C82BDA714000192ED6 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371B33C72BDA714000192ED6 /* Localization.swift */; };
 		373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615B82BA8250800F0854D /* iOSKMPApp.swift */; };
 		373615BB2BA8250800F0854D /* CurrencyExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615BA2BA8250800F0854D /* CurrencyExchangeView.swift */; };
 		373615BF2BA8250900F0854D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373615BE2BA8250900F0854D /* Assets.xcassets */; };
@@ -57,7 +56,6 @@
 		371B33BF2BD94E1E00192ED6 /* Package.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Package.resolved; path = iOSKMP.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = "<group>"; };
 		371B33C12BDA633B00192ED6 /* LibraryLicencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLicencesView.swift; sourceTree = "<group>"; };
 		371B33C32BDA638800192ED6 /* LibraryLicencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLicencesViewModel.swift; sourceTree = "<group>"; };
-		371B33C72BDA714000192ED6 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		373615B52BA8250800F0854D /* iOSKMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		373615B82BA8250800F0854D /* iOSKMPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPApp.swift; sourceTree = "<group>"; };
 		373615BA2BA8250800F0854D /* CurrencyExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeView.swift; sourceTree = "<group>"; };
@@ -273,7 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				849906532BCED6D4002F9845 /* Constants.swift */,
-				371B33C72BDA714000192ED6 /* Localization.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -460,7 +457,6 @@
 				84903B192BD17A5900B2F094 /* LanguageType.swift in Sources */,
 				84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */,
 				849906542BCED6D4002F9845 /* Constants.swift in Sources */,
-				371B33C82BDA714000192ED6 /* Localization.swift in Sources */,
 				371B33C22BDA633B00192ED6 /* LibraryLicencesView.swift in Sources */,
 				373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */,
 				84903B152BD135A700B2F094 /* SettingsView.swift in Sources */,

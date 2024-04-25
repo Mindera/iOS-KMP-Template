@@ -1,5 +1,5 @@
 //
-//  OpenSourceView.swift
+//  LibraryLicencesView.swift
 //  iOSKMP
 //
 //  Created by Naveen Katari  on 25/04/24.
@@ -14,12 +14,10 @@ struct LibraryLicencesView: View {
 
    var body: some View {
       NavigationStack {
-          if let acknowledgements = viewModel.acknowledgements {
-              AcknowListSwiftUIView(acknowledgements:acknowledgements)
+          AcknowListSwiftUIView(acknowledgements:viewModel.acknowledgements)
                   .navigationBarHidden(true)
-          }
      }
-      .navigationTitle(Text(LocalizedStringKey(Localization.acknowledgementsTitle)))
+      .navigationTitle("Acknowledgements")
     }
 }
 
