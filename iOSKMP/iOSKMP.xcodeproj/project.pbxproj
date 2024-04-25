@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371B33BE2BD94DF100192ED6 /* AcknowList in Frameworks */ = {isa = PBXBuildFile; productRef = 371B33BD2BD94DF100192ED6 /* AcknowList */; };
+		371B33C02BD94E1E00192ED6 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 371B33BF2BD94E1E00192ED6 /* Package.resolved */; };
+		371B33C22BDA633B00192ED6 /* LibraryLicencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371B33C12BDA633B00192ED6 /* LibraryLicencesView.swift */; };
+		371B33C42BDA638800192ED6 /* LibraryLicencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371B33C32BDA638800192ED6 /* LibraryLicencesViewModel.swift */; };
 		373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615B82BA8250800F0854D /* iOSKMPApp.swift */; };
 		373615BB2BA8250800F0854D /* CurrencyExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615BA2BA8250800F0854D /* CurrencyExchangeView.swift */; };
 		373615BF2BA8250900F0854D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373615BE2BA8250900F0854D /* Assets.xcassets */; };
@@ -49,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		371B33BF2BD94E1E00192ED6 /* Package.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Package.resolved; path = iOSKMP.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = "<group>"; };
+		371B33C12BDA633B00192ED6 /* LibraryLicencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLicencesView.swift; sourceTree = "<group>"; };
+		371B33C32BDA638800192ED6 /* LibraryLicencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLicencesViewModel.swift; sourceTree = "<group>"; };
 		373615B52BA8250800F0854D /* iOSKMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		373615B82BA8250800F0854D /* iOSKMPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPApp.swift; sourceTree = "<group>"; };
 		373615BA2BA8250800F0854D /* CurrencyExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeView.swift; sourceTree = "<group>"; };
@@ -81,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3791F9712BCC468F005A0378 /* CurrencyExchangeKMP in Frameworks */,
+				371B33BE2BD94DF100192ED6 /* AcknowList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +112,7 @@
 		373615AC2BA8250700F0854D = {
 			isa = PBXGroup;
 			children = (
+				371B33BF2BD94E1E00192ED6 /* Package.resolved */,
 				373615B72BA8250800F0854D /* iOSKMP */,
 				373615CA2BA8250900F0854D /* iOSKMPTests */,
 				373615D42BA8250900F0854D /* iOSKMPUITests */,
@@ -190,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				84903B142BD135A700B2F094 /* SettingsView.swift */,
+				371B33C12BDA633B00192ED6 /* LibraryLicencesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				84AF0CF12BD3E9B5001C8412 /* SettingsViewModel.swift */,
+				371B33C32BDA638800192ED6 /* LibraryLicencesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -309,6 +320,7 @@
 			name = iOSKMP;
 			packageProductDependencies = (
 				3791F9702BCC468F005A0378 /* CurrencyExchangeKMP */,
+				371B33BD2BD94DF100192ED6 /* AcknowList */,
 			);
 			productName = iOSKMP;
 			productReference = 373615B52BA8250800F0854D /* iOSKMP.app */;
@@ -385,6 +397,7 @@
 			mainGroup = 373615AC2BA8250700F0854D;
 			packageReferences = (
 				3791F96F2BCC468F005A0378 /* XCRemoteSwiftPackageReference "Android-KMP-Template" */,
+				371B33BC2BD94DF100192ED6 /* XCRemoteSwiftPackageReference "AcknowList" */,
 			);
 			productRefGroup = 373615B62BA8250800F0854D /* Products */;
 			projectDirPath = "";
@@ -404,6 +417,7 @@
 			files = (
 				373615C22BA8250900F0854D /* Preview Assets.xcassets in Resources */,
 				373615BF2BA8250900F0854D /* Assets.xcassets in Resources */,
+				371B33C02BD94E1E00192ED6 /* Package.resolved in Resources */,
 				849906572BCEDF76002F9845 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,10 +452,12 @@
 				849906512BCEADA8002F9845 /* MenuTab.swift in Sources */,
 				8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */,
 				8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */,
+				371B33C42BDA638800192ED6 /* LibraryLicencesViewModel.swift in Sources */,
 				84AF0CEF2BD3DE75001C8412 /* HeaderView.swift in Sources */,
 				84903B192BD17A5900B2F094 /* LanguageType.swift in Sources */,
 				84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */,
 				849906542BCED6D4002F9845 /* Constants.swift in Sources */,
+				371B33C22BDA633B00192ED6 /* LibraryLicencesView.swift in Sources */,
 				373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */,
 				84903B152BD135A700B2F094 /* SettingsView.swift in Sources */,
 			);
@@ -769,6 +785,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		371B33BC2BD94DF100192ED6 /* XCRemoteSwiftPackageReference "AcknowList" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vtourraine/AcknowList";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
 		3791F96F2BCC468F005A0378 /* XCRemoteSwiftPackageReference "Android-KMP-Template" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Mindera/Android-KMP-Template.git";
@@ -780,6 +804,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		371B33BD2BD94DF100192ED6 /* AcknowList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 371B33BC2BD94DF100192ED6 /* XCRemoteSwiftPackageReference "AcknowList" */;
+			productName = AcknowList;
+		};
 		3791F9702BCC468F005A0378 /* CurrencyExchangeKMP */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3791F96F2BCC468F005A0378 /* XCRemoteSwiftPackageReference "Android-KMP-Template" */;

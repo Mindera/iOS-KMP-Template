@@ -49,8 +49,7 @@ struct SettingsView: View {
                     .pickerStyle(.navigationLink)
                 }
                 
-                // TODO: Add open source screen instead of Text("Open Source"), JIRA ticket #MKMPT-15
-                NavigationLink(destination: Text("Open Source")) {
+                NavigationLink(destination: LibraryLicencesView()) {
                     Text("Open Source")
                 }
             }
