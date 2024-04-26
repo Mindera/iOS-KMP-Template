@@ -7,12 +7,30 @@
 
 import SwiftUI
 
-final class SettingsCoordinator: RootCoordinator {
+final class SettingsCoordinator {
+    private let router = Router()
+    
+    private func makeSettingsView() -> AnyView {
+        let viewModel = SettingsViewModel(delegate: self)
+        let view = SettingsView(viewModel: viewModel, router: router)
+        
+        return AnyView(view)
+    }
+    
+    private func presentLibraryLicences() {
+        let coordinator = LibraryLicensesCoordinator(router: router)
+        coordinator.start()
+    }
+}
+
+extension SettingsCoordinator: RootCoordinator {
     func start() -> AnyView {
         makeSettingsView()
     }
-    
-    private func makeSettingsView() -> AnyView {
-        
+}
+
+extension SettingsCoordinator: SettingsCoordinatorDelegate {
+    func didSelectLibraryLicenses() {
+        presentLibraryLicences()
     }
 }

@@ -13,11 +13,11 @@ struct LibraryLicencesView: View {
     @State private var viewModel = LibraryLicencesViewModel()
     
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             AcknowListSwiftUIView(acknowledgements:viewModel.acknowledgements)
                 .navigationBarHidden(true)
-        }
-        .navigationTitle("Acknowledgements")
+//        }
+//        .navigationTitle("Acknowledgements")
     }
 }
 

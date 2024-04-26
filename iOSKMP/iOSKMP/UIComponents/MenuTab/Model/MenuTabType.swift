@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-enum MenuTab: String, CaseIterable {
+enum MenuTabType: String, CaseIterable {
     case home
     case settings
 }
 
-extension MenuTab {
+extension MenuTabType {
     var title: LocalizedStringKey {
         switch self {
         case .home:

@@ -11,6 +11,7 @@ import CurrencyExchangeKMP
     
     // MARK: - Properties
     
+    var selectedViewMode: CurrencyExchangeViewMode
     var lastTenDaysCurrencyExchangeModels: [CurrencyExchangeModel] = []
     var currentDayExhangeRates: [CurrencyExchangeRateModel] = []
     
@@ -18,7 +19,8 @@ import CurrencyExchangeKMP
     
     // MARK: - Init
     
-    init() {
+    init(selectedViewMode: CurrencyExchangeViewMode) {
+        self.selectedViewMode = selectedViewMode
         observeCurrentDateData()
         observeLastTenDaysData()
     }

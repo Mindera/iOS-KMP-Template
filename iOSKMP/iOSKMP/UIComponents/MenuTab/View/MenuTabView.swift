@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuTabView: View {
-    @State private var viewModel: MenuTabViewModel
+    @Bindable private var viewModel: MenuTabViewModel
     
     init(viewModel: MenuTabViewModel) {
         self.viewModel = viewModel
@@ -20,18 +20,14 @@ struct MenuTabView: View {
             
             TabView(selection: $viewModel.selectedTab) {
                 Group {
-                    CurrencyExchangeView()
-                        .tabItem {
-                            Label(MenuTab.home.title, systemImage: MenuTab.home.imageName)
-                                .environment(\.symbolVariants, .none)
-                        }
-                        .tag(MenuTab.home)
-                    SettingsView()
-                        .tabItem {
-                            Label(MenuTab.settings.title, systemImage: MenuTab.settings.imageName)
-                                .environment(\.symbolVariants, .none)
-                        }
-                        .tag(MenuTab.settings)
+                    ForEach(viewModel.tabElements) { element in
+                        element.view
+                            .tabItem {
+                                element.item
+                                    .environment(\.symbolVariants, .none)
+                            }
+                            .tag(element.type)
+                    }
                 }
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarBackground(Color.baseColor, for: .tabBar)

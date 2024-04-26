@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TabBarCoordinatorDelegate: AnyObject {
-    func didChangeSelectedTab(_ tab: MenuTab)
+    func didChangeSelectedTab(_ tab: MenuTabType)
 }

@@ -11,13 +11,18 @@ struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode = true
     @AppStorage("locale") private var selectedLanguage: String = LanguageType.english.identifier
     
-    @State private var viewModel = SettingsViewModel()
-    @State private var repositoryIndex = 0
+    @Bindable private var viewModel: SettingsViewModel
+    @Bindable private var router: Router
     
     private let gitHubTitle: LocalizedStringKey = "GitHub"
     
+    init(viewModel: SettingsViewModel, router: Router) {
+        self.viewModel = viewModel
+        self.router = router
+    }
+    
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $router.navigableViews) {
             Form {
                 Toggle("Dark Mode", isOn: $isDarkMode)
                 
@@ -42,22 +47,23 @@ struct SettingsView: View {
                 }
                 
                 Link(destination: URL(string: Constants.repositoryURL)!) {
-                    Picker("Repository", selection: $repositoryIndex) {
+                    Picker("Repository", selection: $viewModel.repositoryIndex) {
                         Text(gitHubTitle)
                             .tag(0)
                     }
                     .pickerStyle(.navigationLink)
                 }
                 
-                NavigationLink(destination: LibraryLicencesView()) {
-                    Text("Open Source")
+                Button(action: {
+                    viewModel.selectLibraryLicences()
+                }) {
+                    NavigationLink("Open Source") {}
                 }
             }
             .navigationBarTitle("")
+            .navigationDestination(for: NavigableView.self) {
+                $0.view
+            }
         }
     }
-}
-
-#Preview {
-    SettingsView()
 }

@@ -21,15 +21,23 @@
 		373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */; };
 		3791F9712BCC468F005A0378 /* CurrencyExchangeKMP in Frameworks */ = {isa = PBXBuildFile; productRef = 3791F9702BCC468F005A0378 /* CurrencyExchangeKMP */; };
 		8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487BE012BCD852E0060B600 /* Color+Extensions.swift */; };
+		848E293C2BDBABFC0050FC23 /* MenuTabElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E293B2BDBABFC0050FC23 /* MenuTabElement.swift */; };
+		848E293E2BDBAFD20050FC23 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E293D2BDBAFD20050FC23 /* HomeCoordinator.swift */; };
+		848E29402BDBCD390050FC23 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E293F2BDBCD390050FC23 /* Routable.swift */; };
+		848E29422BDBD3650050FC23 /* Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E29412BDBD3650050FC23 /* Navigable.swift */; };
+		848E29442BDBD3E30050FC23 /* NavigableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E29432BDBD3E30050FC23 /* NavigableView.swift */; };
+		848E29462BDBD6EA0050FC23 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E29452BDBD6EA0050FC23 /* Router.swift */; };
 		84903B152BD135A700B2F094 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84903B142BD135A700B2F094 /* SettingsView.swift */; };
 		84903B192BD17A5900B2F094 /* LanguageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84903B182BD17A5900B2F094 /* LanguageType.swift */; };
 		84903B1B2BD189DE00B2F094 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84903B1A2BD189DE00B2F094 /* UIApplication+Extensions.swift */; };
 		8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A3BB2BC9672600FF9103 /* CurrencyExchangeRateModel.swift */; };
 		8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491A3BD2BC96AE600FF9103 /* CurrencyExchangeModel.swift */; };
 		8499064F2BCEAD13002F9845 /* MenuTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499064E2BCEAD13002F9845 /* MenuTabView.swift */; };
-		849906512BCEADA8002F9845 /* MenuTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849906502BCEADA8002F9845 /* MenuTab.swift */; };
+		849906512BCEADA8002F9845 /* MenuTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849906502BCEADA8002F9845 /* MenuTabType.swift */; };
 		849906542BCED6D4002F9845 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849906532BCED6D4002F9845 /* Constants.swift */; };
 		849906572BCEDF76002F9845 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 849906562BCEDF76002F9845 /* Localizable.xcstrings */; };
+		849B5E882BDBFFF300D3233B /* SettingsCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B5E872BDBFFF300D3233B /* SettingsCoordinatorDelegate.swift */; };
+		849B5E8A2BDC041500D3233B /* LibraryLicensesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B5E892BDC041500D3233B /* LibraryLicensesCoordinator.swift */; };
 		84AF0CEF2BD3DE75001C8412 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF0CEE2BD3DE75001C8412 /* HeaderView.swift */; };
 		84AF0CF22BD3E9B5001C8412 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF0CF12BD3E9B5001C8412 /* SettingsViewModel.swift */; };
 		84B6FBCB2BDA7CCC000F2532 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6FBCA2BDA7CCC000F2532 /* Coordinator.swift */; };
@@ -74,15 +82,23 @@
 		373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewModel.swift; sourceTree = "<group>"; };
 		8487BE012BCD852E0060B600 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		848E293B2BDBABFC0050FC23 /* MenuTabElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabElement.swift; sourceTree = "<group>"; };
+		848E293D2BDBAFD20050FC23 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		848E293F2BDBCD390050FC23 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		848E29412BDBD3650050FC23 /* Navigable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigable.swift; sourceTree = "<group>"; };
+		848E29432BDBD3E30050FC23 /* NavigableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigableView.swift; sourceTree = "<group>"; };
+		848E29452BDBD6EA0050FC23 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		84903B142BD135A700B2F094 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		84903B182BD17A5900B2F094 /* LanguageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageType.swift; sourceTree = "<group>"; };
 		84903B1A2BD189DE00B2F094 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		8491A3BB2BC9672600FF9103 /* CurrencyExchangeRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeRateModel.swift; sourceTree = "<group>"; };
 		8491A3BD2BC96AE600FF9103 /* CurrencyExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeModel.swift; sourceTree = "<group>"; };
 		8499064E2BCEAD13002F9845 /* MenuTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabView.swift; sourceTree = "<group>"; };
-		849906502BCEADA8002F9845 /* MenuTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTab.swift; sourceTree = "<group>"; };
+		849906502BCEADA8002F9845 /* MenuTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabType.swift; sourceTree = "<group>"; };
 		849906532BCED6D4002F9845 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		849906562BCEDF76002F9845 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		849B5E872BDBFFF300D3233B /* SettingsCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		849B5E892BDC041500D3233B /* LibraryLicensesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLicensesCoordinator.swift; sourceTree = "<group>"; };
 		84AF0CEE2BD3DE75001C8412 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		84AF0CF12BD3E9B5001C8412 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		84B6FBCA2BDA7CCC000F2532 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -145,7 +161,7 @@
 		373615B72BA8250800F0854D /* iOSKMP */ = {
 			isa = PBXGroup;
 			children = (
-				84B6FBC72BDA7C6E000F2532 /* Protocols */,
+				84B6FBC72BDA7C6E000F2532 /* Coordinator */,
 				849906552BCEDF5B002F9845 /* Resources */,
 				8491A3B62BC9655300FF9103 /* Scenes */,
 				84FA60322BD012840020C66E /* Supporting Files */,
@@ -212,8 +228,8 @@
 		84903B162BD17A1E00B2F094 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				84903B142BD135A700B2F094 /* SettingsView.swift */,
 				371B33C12BDA633B00192ED6 /* LibraryLicencesView.swift */,
+				84903B142BD135A700B2F094 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +267,7 @@
 			children = (
 				8491A3BD2BC96AE600FF9103 /* CurrencyExchangeModel.swift */,
 				8491A3BB2BC9672600FF9103 /* CurrencyExchangeRateModel.swift */,
+				84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				373615BA2BA8250800F0854D /* CurrencyExchangeView.swift */,
-				84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,29 +314,57 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		849B5E8B2BDC149200D3233B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				84B6FBCC2BDA8457000F2532 /* TabBarCoordinator.swift */,
+				849B5E8C2BDC149900D3233B /* Protocol */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		849B5E8C2BDC149900D3233B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				84B6FBD82BDAB91A000F2532 /* TabBarCoordinatorDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		849B5E8E2BDC155500D3233B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				848E29412BDBD3650050FC23 /* Navigable.swift */,
+				848E29432BDBD3E30050FC23 /* NavigableView.swift */,
+				848E293F2BDBCD390050FC23 /* Routable.swift */,
+				848E29452BDBD6EA0050FC23 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		84AF0CF02BD3E997001C8412 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				84AF0CF12BD3E9B5001C8412 /* SettingsViewModel.swift */,
 				371B33C32BDA638800192ED6 /* LibraryLicencesViewModel.swift */,
+				84AF0CF12BD3E9B5001C8412 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		84B6FBC72BDA7C6E000F2532 /* Protocols */ = {
+		84B6FBC72BDA7C6E000F2532 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				84B6FBCA2BDA7CCC000F2532 /* Coordinator.swift */,
-				84B6FBCC2BDA8457000F2532 /* TabBarCoordinator.swift */,
 				84B6FBCE2BDA84EA000F2532 /* RootCoordinator.swift */,
-				84B6FBD82BDAB91A000F2532 /* TabBarCoordinatorDelegate.swift */,
+				849B5E8E2BDC155500D3233B /* Router */,
 			);
-			path = Protocols;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		84B6FBD02BDA90DE000F2532 /* MenuTab */ = {
 			isa = PBXGroup;
 			children = (
+				849B5E8B2BDC149200D3233B /* Coordinator */,
 				84B6FBD52BDA913A000F2532 /* Model */,
 				84B6FBD12BDA90EF000F2532 /* View */,
 				84B6FBD22BDA90FF000F2532 /* ViewModel */,
@@ -363,7 +407,8 @@
 		84B6FBD52BDA913A000F2532 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				849906502BCEADA8002F9845 /* MenuTab.swift */,
+				849906502BCEADA8002F9845 /* MenuTabType.swift */,
+				848E293B2BDBABFC0050FC23 /* MenuTabElement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -371,6 +416,7 @@
 		84B6FBDA2BDAC004000F2532 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				848E293D2BDBAFD20050FC23 /* HomeCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -378,8 +424,9 @@
 		84B6FBDB2BDAC021000F2532 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				84B6FBDC2BDAC029000F2532 /* Protocol */,
+				849B5E892BDC041500D3233B /* LibraryLicensesCoordinator.swift */,
 				84B6FBDD2BDAC05B000F2532 /* SettingsCoordinator.swift */,
+				84B6FBDC2BDAC029000F2532 /* Protocol */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -387,6 +434,7 @@
 		84B6FBDC2BDAC029000F2532 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				849B5E872BDBFFF300D3233B /* SettingsCoordinatorDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -545,25 +593,33 @@
 				373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */,
 				8499064F2BCEAD13002F9845 /* MenuTabView.swift in Sources */,
 				84B6FBD92BDAB91A000F2532 /* TabBarCoordinatorDelegate.swift in Sources */,
+				849B5E882BDBFFF300D3233B /* SettingsCoordinatorDelegate.swift in Sources */,
 				8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */,
 				84903B1B2BD189DE00B2F094 /* UIApplication+Extensions.swift in Sources */,
+				849B5E8A2BDC041500D3233B /* LibraryLicensesCoordinator.swift in Sources */,
 				84B6FBCD2BDA8457000F2532 /* TabBarCoordinator.swift in Sources */,
+				848E293E2BDBAFD20050FC23 /* HomeCoordinator.swift in Sources */,
 				84B6FBCB2BDA7CCC000F2532 /* Coordinator.swift in Sources */,
 				84AF0CF22BD3E9B5001C8412 /* SettingsViewModel.swift in Sources */,
-				849906512BCEADA8002F9845 /* MenuTab.swift in Sources */,
+				849906512BCEADA8002F9845 /* MenuTabType.swift in Sources */,
 				8491A3BE2BC96AE600FF9103 /* CurrencyExchangeModel.swift in Sources */,
 				84B6FBDE2BDAC05B000F2532 /* SettingsCoordinator.swift in Sources */,
 				8491A3BC2BC9672600FF9103 /* CurrencyExchangeRateModel.swift in Sources */,
+				848E29442BDBD3E30050FC23 /* NavigableView.swift in Sources */,
 				371B33C42BDA638800192ED6 /* LibraryLicencesViewModel.swift in Sources */,
+				848E29402BDBCD390050FC23 /* Routable.swift in Sources */,
 				84AF0CEF2BD3DE75001C8412 /* HeaderView.swift in Sources */,
 				84903B192BD17A5900B2F094 /* LanguageType.swift in Sources */,
 				84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */,
 				849906542BCED6D4002F9845 /* Constants.swift in Sources */,
+				848E29462BDBD6EA0050FC23 /* Router.swift in Sources */,
 				371B33C22BDA633B00192ED6 /* LibraryLicencesView.swift in Sources */,
 				84B6FBD72BDA9151000F2532 /* MenuTabViewModel.swift in Sources */,
 				373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */,
+				848E293C2BDBABFC0050FC23 /* MenuTabElement.swift in Sources */,
 				84B6FBCF2BDA84EA000F2532 /* RootCoordinator.swift in Sources */,
 				84903B152BD135A700B2F094 /* SettingsView.swift in Sources */,
+				848E29422BDBD3650050FC23 /* Navigable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

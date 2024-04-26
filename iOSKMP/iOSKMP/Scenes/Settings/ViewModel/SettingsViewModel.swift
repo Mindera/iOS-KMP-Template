@@ -5,20 +5,28 @@
 //  Created by Timea Varga on 20.04.2024.
 //
 
-import Foundation
+import SwiftUI
 
 @Observable class SettingsViewModel {
     
     // MARK: - Properties
     
     var appSize: String = ""
+    var repositoryIndex = 0
+    
+    private weak var delegate: SettingsCoordinatorDelegate?
     
     // MARK: - Init
     
-    init() {
+    init(delegate: SettingsCoordinatorDelegate) {
+        self.delegate = delegate
         DispatchQueue.global(qos: .background).async { [weak self] in
             self?.calculateAppSize()
         }
+    }
+    
+    func selectLibraryLicences() {
+        delegate?.didSelectLibraryLicenses()
     }
     
     // MARK: - Private methods
