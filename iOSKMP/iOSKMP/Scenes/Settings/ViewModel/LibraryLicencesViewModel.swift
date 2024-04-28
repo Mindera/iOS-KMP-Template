@@ -12,11 +12,18 @@ import AcknowList
     
     var acknowledgements = [Acknow]()
     
-    init() {
+    private weak var delegate: LibraryLicencesCoordinatorDelegate?
+    
+    init(delegate: LibraryLicencesCoordinatorDelegate) {
+        self.delegate = delegate
         loadAcknowledgements()
     }
     
-    func loadAcknowledgements() {
+    func goBack() {
+        delegate?.didSelectBack()
+    }
+    
+    private func loadAcknowledgements() {
         guard let url = Bundle.main.url(forResource: "Package", withExtension: "resolved"),
               let data = try? Data(contentsOf: url),
               let acknowList = try? AcknowPackageDecoder().decode(from: data) else {
@@ -24,5 +31,4 @@ import AcknowList
         }
         acknowledgements = acknowList.acknowledgements
     }
-    
 }

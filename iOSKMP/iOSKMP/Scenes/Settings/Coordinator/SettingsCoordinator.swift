@@ -9,6 +9,7 @@ import SwiftUI
 
 final class SettingsCoordinator {
     private let router = Router()
+    private var libraryLicensesCoordinator: LibraryLicensesCoordinator?
     
     private func makeSettingsView() -> AnyView {
         let viewModel = SettingsViewModel(delegate: self)
@@ -18,8 +19,8 @@ final class SettingsCoordinator {
     }
     
     private func presentLibraryLicences() {
-        let coordinator = LibraryLicensesCoordinator(router: router)
-        coordinator.start()
+        libraryLicensesCoordinator = LibraryLicensesCoordinator(router: router)
+        libraryLicensesCoordinator?.start()
     }
 }
 

@@ -15,7 +15,14 @@ final class LibraryLicensesCoordinator: Coordinator {
     }
     
     func start() {
-        let view = NavigableView(view: AnyView(LibraryLicencesView()))
+        let viewModel = LibraryLicencesViewModel(delegate: self)
+        let view = NavigableView(view: AnyView(LibraryLicencesView(viewModel: viewModel)))
         router.present(view)
+    }
+}
+
+extension LibraryLicensesCoordinator: LibraryLicencesCoordinatorDelegate {
+    func didSelectBack() {
+        router.pop()
     }
 }

@@ -40,6 +40,7 @@
 		849B5E8A2BDC041500D3233B /* LibraryLicensesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B5E892BDC041500D3233B /* LibraryLicensesCoordinator.swift */; };
 		84AF0CEF2BD3DE75001C8412 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF0CEE2BD3DE75001C8412 /* HeaderView.swift */; };
 		84AF0CF22BD3E9B5001C8412 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF0CF12BD3E9B5001C8412 /* SettingsViewModel.swift */; };
+		84AF51B12BDE5D47000228BD /* LibraryLicencesCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF51B02BDE5D47000228BD /* LibraryLicencesCoordinatorDelegate.swift */; };
 		84B6FBCB2BDA7CCC000F2532 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6FBCA2BDA7CCC000F2532 /* Coordinator.swift */; };
 		84B6FBCD2BDA8457000F2532 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6FBCC2BDA8457000F2532 /* TabBarCoordinator.swift */; };
 		84B6FBCF2BDA84EA000F2532 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6FBCE2BDA84EA000F2532 /* RootCoordinator.swift */; };
@@ -101,6 +102,7 @@
 		849B5E892BDC041500D3233B /* LibraryLicensesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLicensesCoordinator.swift; sourceTree = "<group>"; };
 		84AF0CEE2BD3DE75001C8412 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		84AF0CF12BD3E9B5001C8412 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		84AF51B02BDE5D47000228BD /* LibraryLicencesCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLicencesCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		84B6FBCA2BDA7CCC000F2532 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		84B6FBCC2BDA8457000F2532 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		84B6FBCE2BDA84EA000F2532 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				849B5E872BDBFFF300D3233B /* SettingsCoordinatorDelegate.swift */,
+				84AF51B02BDE5D47000228BD /* LibraryLicencesCoordinatorDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */,
 				848E293C2BDBABFC0050FC23 /* MenuTabElement.swift in Sources */,
 				84B6FBCF2BDA84EA000F2532 /* RootCoordinator.swift in Sources */,
+				84AF51B12BDE5D47000228BD /* LibraryLicencesCoordinatorDelegate.swift in Sources */,
 				84903B152BD135A700B2F094 /* SettingsView.swift in Sources */,
 				848E29422BDBD3650050FC23 /* Navigable.swift in Sources */,
 			);

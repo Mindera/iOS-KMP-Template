@@ -10,17 +10,24 @@ import SwiftUI
 import AcknowList
 
 struct LibraryLicencesView: View {
-    @State private var viewModel = LibraryLicencesViewModel()
+    @State private var viewModel: LibraryLicencesViewModel
+    
+    init(viewModel: LibraryLicencesViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
-//        NavigationStack {
-            AcknowListSwiftUIView(acknowledgements:viewModel.acknowledgements)
-                .navigationBarHidden(true)
-//        }
-//        .navigationTitle("Acknowledgements")
+        AcknowListSwiftUIView(acknowledgements:viewModel.acknowledgements)
+            .navigationBarBackButtonHidden(true)
+//            .navigationTitle("Acknowledgements")
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        viewModel.goBack()
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                    }
+                }
+            }
     }
-}
-
-#Preview {
-    LibraryLicencesView()
 }
