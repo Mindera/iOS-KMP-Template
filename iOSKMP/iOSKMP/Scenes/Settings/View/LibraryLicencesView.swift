@@ -10,7 +10,7 @@ import SwiftUI
 import AcknowList
 
 struct LibraryLicencesView: View {
-    @State private var viewModel: LibraryLicencesViewModel
+    private var viewModel: LibraryLicencesViewModel
     
     init(viewModel: LibraryLicencesViewModel) {
         self.viewModel = viewModel

@@ -11,6 +11,10 @@ final class SettingsCoordinator {
     private let router = Router()
     private var libraryLicensesCoordinator: LibraryLicensesCoordinator?
     
+    func popToRoot() {
+        router.popToRoot()
+    }
+    
     private func makeSettingsView() -> AnyView {
         let viewModel = SettingsViewModel(delegate: self)
         let view = SettingsView(viewModel: viewModel, router: router)

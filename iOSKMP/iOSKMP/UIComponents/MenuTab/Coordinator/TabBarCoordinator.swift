@@ -11,6 +11,7 @@ final class TabBarCoordinator: RootCoordinator {
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("locale") private var selectedLanguageIdentifier = LanguageType.english.identifier
     
+    private var homeCoordinator: HomeCoordinator?
     private var settingsCoordinator: SettingsCoordinator?
     
     func start() -> AnyView {
@@ -29,7 +30,9 @@ final class TabBarCoordinator: RootCoordinator {
     }
     
     private func makeHomeRootTab() -> MenuTabElement {
-        let homeView = HomeCoordinator().start()
+        let homeCoordinator = HomeCoordinator()
+        let homeView = homeCoordinator.start()
+        self.homeCoordinator = homeCoordinator
         return makeMenuTabElement(view: homeView, type: .home)
     }
     
@@ -58,10 +61,11 @@ final class TabBarCoordinator: RootCoordinator {
 
 extension TabBarCoordinator: TabBarCoordinatorDelegate {
     func didChangeSelectedTab(_ tab: MenuTabType) {
-//        switch tab {
-//        case .home:
-//            
-//        case .settings:
-//        }
+        switch tab {
+        case .home:
+            homeCoordinator?.popToRoot()
+        case .settings:
+            settingsCoordinator?.popToRoot()
+        }
     }
 }
