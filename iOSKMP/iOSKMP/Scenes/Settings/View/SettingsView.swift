@@ -46,7 +46,9 @@ struct SettingsView: View {
                     Text("v " + UIApplication.appVersion)
                 }
                 
-                Link(destination: URL(string: Constants.repositoryURL)!) {
+                Button {
+                    viewModel.goToRepository()
+                } label: {
                     Picker("Repository", selection: $viewModel.repositoryIndex) {
                         Text(gitHubTitle)
                             .tag(0)
@@ -54,9 +56,9 @@ struct SettingsView: View {
                     .pickerStyle(.navigationLink)
                 }
                 
-                Button(action: {
+                Button {
                     viewModel.selectLibraryLicences()
-                }) {
+                } label: {
                     NavigationLink("Open Source") {}
                 }
             }

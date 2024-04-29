@@ -18,6 +18,11 @@ final class SettingsCoordinator {
         return AnyView(view)
     }
     
+    private func goToRepository() {
+        guard let url = URL(string: Constants.repositoryURLString) else { return }
+        UIApplication.shared.open(url)
+    }
+    
     private func presentLibraryLicences() {
         libraryLicensesCoordinator = LibraryLicensesCoordinator(router: router)
         libraryLicensesCoordinator?.start()
@@ -31,6 +36,10 @@ extension SettingsCoordinator: RootCoordinator {
 }
 
 extension SettingsCoordinator: SettingsCoordinatorDelegate {
+    func didSelectRepository() {
+        goToRepository()
+    }
+    
     func didSelectLibraryLicenses() {
         presentLibraryLicences()
     }

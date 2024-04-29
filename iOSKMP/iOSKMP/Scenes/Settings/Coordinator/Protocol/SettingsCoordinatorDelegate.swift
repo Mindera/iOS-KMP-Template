@@ -8,5 +8,6 @@
 import Foundation
 
 protocol SettingsCoordinatorDelegate: AnyObject {
+    func didSelectRepository()
     func didSelectLibraryLicenses()
 }

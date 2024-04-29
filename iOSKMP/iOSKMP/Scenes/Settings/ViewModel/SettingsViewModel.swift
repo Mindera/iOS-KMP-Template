@@ -25,6 +25,10 @@ import SwiftUI
         }
     }
     
+    func goToRepository() {
+        delegate?.didSelectRepository()
+    }
+    
     func selectLibraryLicences() {
         delegate?.didSelectLibraryLicenses()
     }
