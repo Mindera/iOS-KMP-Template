@@ -32,7 +32,7 @@ struct SettingsView: View {
                             .tag(languageType.identifier)
                     }
                 }
-                .pickerStyle(.navigationLink)
+                .pickerStyle(.menu)
                 
                 HStack {
                     Text("App Size")

@@ -436,8 +436,8 @@
 		84B6FBDC2BDAC029000F2532 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				849B5E872BDBFFF300D3233B /* SettingsCoordinatorDelegate.swift */,
 				84AF51B02BDE5D47000228BD /* LibraryLicencesCoordinatorDelegate.swift */,
+				849B5E872BDBFFF300D3233B /* SettingsCoordinatorDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
