@@ -8,11 +8,18 @@
 import SwiftUI
 
 final class LibraryLicensesCoordinator: Coordinator {
+    
+    // MARK: - Properties
+    
     private let router: Routable
+    
+    // MARK: - Init
     
     init(router: Routable) {
         self.router = router
     }
+    
+    // MARK: - Internal methods
     
     func start() {
         let viewModel = LibraryLicencesViewModel(delegate: self)
@@ -20,6 +27,8 @@ final class LibraryLicensesCoordinator: Coordinator {
         router.present(view)
     }
 }
+
+// MARK: - LibraryLicencesCoordinatorDelegate
 
 extension LibraryLicensesCoordinator: LibraryLicencesCoordinatorDelegate {
     func didSelectBack() {

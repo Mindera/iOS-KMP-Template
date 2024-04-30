@@ -8,7 +8,12 @@
 import SwiftUI
 
 @Observable final class HomeCoordinator: RootCoordinator {
+    
+    // MARK: - Properties
+    
     private var viewModel: CurrencyExchangeViewModel?
+    
+    // MARK: - Internal methods
     
     func start() -> AnyView {
         makeHomeView()
@@ -17,6 +22,8 @@ import SwiftUI
     func popToRoot() {
         viewModel?.selectedViewMode = .graph
     }
+    
+    // MARK: - Private methods
     
     private func makeHomeView() -> AnyView {
         let viewModel = CurrencyExchangeViewModel(selectedViewMode: .graph)

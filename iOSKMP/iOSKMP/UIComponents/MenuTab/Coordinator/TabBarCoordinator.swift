@@ -8,24 +8,25 @@
 import SwiftUI
 
 final class TabBarCoordinator: RootCoordinator {
-    @AppStorage("isDarkMode") private var isDarkMode = false
-    @AppStorage("locale") private var selectedLanguageIdentifier = LanguageType.english.identifier
+    
+    // MARK: - Properties
     
     private var homeCoordinator: HomeCoordinator?
     private var settingsCoordinator: SettingsCoordinator?
+    
+    // MARK: - Internal methods
     
     func start() -> AnyView {
         makeMenuTabView()
     }
     
+    // MARK: - Private methods
+    
     private func makeMenuTabView() -> AnyView {
         let tabs = [makeHomeRootTab(), makeSettingsRootTab()]
         let viewModel = MenuTabViewModel(selectedTab: .home, tabs: tabs, delegate: self)
         let view = MenuTabView(viewModel: viewModel)
-            .environment(\.colorScheme, isDarkMode ? .dark : .light)
-            .preferredColorScheme(isDarkMode ? .dark : .light)
-            .environment(\.locale, Locale(identifier: selectedLanguageIdentifier))
-        
+
         return AnyView(view)
     }
     

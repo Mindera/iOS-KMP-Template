@@ -8,12 +8,19 @@
 import SwiftUI
 
 final class SettingsCoordinator {
+    
+    // MARK: - Properties
+    
     private let router = Router()
     private var libraryLicensesCoordinator: LibraryLicensesCoordinator?
+    
+    // MARK: - Internal methods
     
     func popToRoot() {
         router.popToRoot()
     }
+    
+    // MARK: - Private methods
     
     private func makeSettingsView() -> AnyView {
         let viewModel = SettingsViewModel(delegate: self)
@@ -33,11 +40,15 @@ final class SettingsCoordinator {
     }
 }
 
+// MARK: - RootCoordinator
+
 extension SettingsCoordinator: RootCoordinator {
     func start() -> AnyView {
         makeSettingsView()
     }
 }
+
+// MARK: - SettingsCoordinatorDelegate
 
 extension SettingsCoordinator: SettingsCoordinatorDelegate {
     func didSelectRepository() {

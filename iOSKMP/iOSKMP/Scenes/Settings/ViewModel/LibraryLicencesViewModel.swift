@@ -10,18 +10,26 @@ import AcknowList
 
 @Observable class LibraryLicencesViewModel {
     
+    // MARK: - Properties
+    
     var acknowledgements = [Acknow]()
     
     private weak var delegate: LibraryLicencesCoordinatorDelegate?
+    
+    // MARK: - Init
     
     init(delegate: LibraryLicencesCoordinatorDelegate) {
         self.delegate = delegate
         loadAcknowledgements()
     }
     
+    // MARK: - Internal methods
+    
     func goBack() {
         delegate?.didSelectBack()
     }
+    
+    // MARK: - Private methods
     
     private func loadAcknowledgements() {
         guard let url = Bundle.main.url(forResource: "Package", withExtension: "resolved"),

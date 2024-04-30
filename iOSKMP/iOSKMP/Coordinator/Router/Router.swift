@@ -11,6 +11,8 @@ import Foundation
     var navigableViews: [NavigableView] = []
 }
 
+// MARK: - Routable
+
 extension Router: Routable {
     func present(_ view: NavigableView) {
         navigableViews.append(view)

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MenuTabView: View {
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    @AppStorage("locale") private var selectedLanguageIdentifier = LanguageType.english.identifier
+    
     @Bindable private var viewModel: MenuTabViewModel
     
     init(viewModel: MenuTabViewModel) {
@@ -36,5 +39,8 @@ struct MenuTabView: View {
                 }
             }
         }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .environment(\.colorScheme, isDarkMode ? .dark : .light)
+        .environment(\.locale, Locale(identifier: selectedLanguageIdentifier))
     }
 }

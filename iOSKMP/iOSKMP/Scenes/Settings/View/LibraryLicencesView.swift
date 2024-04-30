@@ -18,8 +18,8 @@ struct LibraryLicencesView: View {
     
     var body: some View {
         AcknowListSwiftUIView(acknowledgements:viewModel.acknowledgements)
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
-//            .navigationTitle("Acknowledgements")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
