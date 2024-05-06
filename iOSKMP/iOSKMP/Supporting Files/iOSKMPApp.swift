@@ -10,19 +10,16 @@ import CurrencyExchangeKMP
 
 @main
 struct iOSKMPApp: App {
-    @AppStorage("isDarkMode") private var isDarkMode = false
-    @AppStorage("locale") private var selectedLanguageIdentifier = LanguageType.english.identifier
+    private let tabBarCoordinator: RootCoordinator
     
     init() {
+        tabBarCoordinator = TabBarCoordinator()
         IOSKoinHelperKt.doInitKoin()
     }
 
     var body: some Scene {
         WindowGroup {
-            MenuTabView()
-                .environment(\.colorScheme, isDarkMode ? .dark : .light)
-                .preferredColorScheme(isDarkMode ? .dark : .light)
-                .environment(\.locale, Locale(identifier: selectedLanguageIdentifier))
+            tabBarCoordinator.start()
         }
     }
 }

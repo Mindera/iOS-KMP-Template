@@ -25,5 +25,5 @@ enum Constants {
     
     // MARK: - String
     
-    static let repositoryURL: String = "https://github.com/Mindera/iOS-KMP-Template"
+    static let repositoryURLString: String = "https://github.com/Mindera/iOS-KMP-Template"
 }

@@ -2,12 +2,15 @@ import SwiftUI
 import Charts
 
 struct CurrencyExchangeView: View {
-    @State private var viewModel = CurrencyExchangeViewModel()
-    @State private var selectedViewMode: CurrencyExchangeViewMode = .graph
+    @Bindable private var viewModel: CurrencyExchangeViewModel
+    
+    init(viewModel: CurrencyExchangeViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
-            Picker("", selection: $selectedViewMode) {
+            Picker("", selection: $viewModel.selectedViewMode) {
                 ForEach(CurrencyExchangeViewMode.allCases) { viewMode in
                     Text(viewMode.title)
                         .tag(viewMode)
@@ -16,7 +19,7 @@ struct CurrencyExchangeView: View {
             .padding()
             .pickerStyle(.segmented)
             
-            switch selectedViewMode {
+            switch viewModel.selectedViewMode {
             case .graph:
                 Chart {
                     ForEach(viewModel.currentDayExhangeRates) { exchangeRate in
@@ -52,8 +55,4 @@ struct CurrencyExchangeView: View {
             }
         }
     }
-}
-
-#Preview {
-    CurrencyExchangeView()
 }
