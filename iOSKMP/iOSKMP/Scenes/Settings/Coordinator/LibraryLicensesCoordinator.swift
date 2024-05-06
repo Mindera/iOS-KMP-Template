@@ -23,7 +23,7 @@ final class LibraryLicensesCoordinator: Coordinator {
     
     func start() {
         let viewModel = LibraryLicencesViewModel(delegate: self)
-        let view = NavigableView(view: AnyView(LibraryLicencesView(viewModel: viewModel)))
+        let view = NavigableView(view: LibraryLicencesView(viewModel: viewModel).eraseToAnyView())
         router.present(view)
     }
 }

@@ -7,7 +7,7 @@
 
 import CurrencyExchangeKMP
 
-@Observable class CurrencyExchangeViewModel {
+@Observable final class CurrencyExchangeViewModel {
     
     // MARK: - Properties
     

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@Observable final class HomeCoordinator: RootCoordinator {
+final class HomeCoordinator: RootCoordinator {
     
     // MARK: - Properties
     
@@ -30,6 +30,6 @@ import SwiftUI
         let view = CurrencyExchangeView(viewModel: viewModel)
         self.viewModel = viewModel
         
-        return AnyView(view)
+        return view.eraseToAnyView()
     }
 }

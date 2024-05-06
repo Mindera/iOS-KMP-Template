@@ -26,7 +26,7 @@ final class SettingsCoordinator {
         let viewModel = SettingsViewModel(delegate: self)
         let view = SettingsView(viewModel: viewModel, router: router)
         
-        return AnyView(view)
+        return view.eraseToAnyView()
     }
     
     private func goToRepository() {

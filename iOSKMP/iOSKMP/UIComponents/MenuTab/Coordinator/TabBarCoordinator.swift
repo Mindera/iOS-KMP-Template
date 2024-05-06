@@ -27,7 +27,7 @@ final class TabBarCoordinator: RootCoordinator {
         let viewModel = MenuTabViewModel(selectedTab: .home, tabs: tabs, delegate: self)
         let view = MenuTabView(viewModel: viewModel)
 
-        return AnyView(view)
+        return view.eraseToAnyView()
     }
     
     private func makeHomeRootTab() -> MenuTabElement {
@@ -47,14 +47,14 @@ final class TabBarCoordinator: RootCoordinator {
     private func itemMenuTabElement(type: MenuTabType) -> AnyView {
         switch type {
         case .home:
-            return AnyView(Label(MenuTabType.home.title, systemImage: MenuTabType.home.imageName))
+            return Label(MenuTabType.home.title, systemImage: MenuTabType.home.imageName).eraseToAnyView()
         case .settings:
-            return AnyView(Label(MenuTabType.settings.title, systemImage: MenuTabType.settings.imageName))
+            return Label(MenuTabType.settings.title, systemImage: MenuTabType.settings.imageName).eraseToAnyView()
         }
     }
     
     private func makeMenuTabElement(view: AnyView, type: MenuTabType) -> MenuTabElement {
-        MenuTabElement(type: type, view: view, item: AnyView(itemMenuTabElement(type: type)))
+        MenuTabElement(type: type, view: view, item: itemMenuTabElement(type: type))
     }
 }
 

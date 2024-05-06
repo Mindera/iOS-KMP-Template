@@ -7,7 +7,7 @@
 
 import Foundation
 
-@Observable class MenuTabViewModel {
+@Observable final class MenuTabViewModel {
     
     // MARK: - Properties
     

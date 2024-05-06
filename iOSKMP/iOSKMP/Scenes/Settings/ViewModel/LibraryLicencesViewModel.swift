@@ -8,7 +8,7 @@
 import Foundation
 import AcknowList
 
-@Observable class LibraryLicencesViewModel {
+@Observable final class LibraryLicencesViewModel {
     
     // MARK: - Properties
     

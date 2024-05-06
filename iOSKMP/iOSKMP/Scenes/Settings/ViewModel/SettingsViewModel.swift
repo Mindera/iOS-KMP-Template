@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@Observable class SettingsViewModel {
+@Observable final class SettingsViewModel {
     
     // MARK: - Properties
     
