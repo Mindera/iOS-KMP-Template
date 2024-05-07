@@ -15,6 +15,6 @@ This project demonstrates the use of Kotlin Multiplatform in an iOS application.
 - Kotlin Multiplatform Mobile Plugin for Android Studio or IntelliJ
 - Swift Package Manager (SPM) for dependency management in iOS
 
- # Ensure dependencies are managed via Swift Package Manager in Xcode.
+*Ensure dependencies are managed via Swift Package Manager in Xcode.*
 
 This pairs with https://github.com/Mindera/Android-KMP-Template
