@@ -5,7 +5,8 @@ This project demonstrates the use of Kotlin Multiplatform in an iOS application.
 ## Features
 
 - **Cross-platform Logic**: Utilize Kotlin to handle business logic that runs both on iOS and Android.
-- **Native UI**: iOS native UI implementation to ensure the best user experience.
+- **Native UI**: iOS native UI implementation with SwiftUI to ensure the best user experience.
+- **MVVM-C Pattern**: Implementation using MVVM architecture with Coordinator pattern to decouple UI from the business logic and navigation.
 - **Reusable Components**: Showcases how to structure your Kotlin code to maximize reuse between platforms.
 
   ### Prerequisites
