@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "acknowlist",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vtourraine/AcknowList",
+      "state" : {
+        "revision" : "50fcf866db4717c8bf246a6eeea3b97f7d1703ad",
+        "version" : "3.1.0"
+      }
+    },
+    {
+      "identity" : "android-kmp-template",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Mindera/Android-KMP-Template.git",
+      "state" : {
+        "branch" : "iOS_Framework_Debug",
+        "revision" : "98d025493a43cad0145d89fbfb8aa8a1e1e05bb8"
+      }
+    }
+  ],
+  "version" : 2
+}
