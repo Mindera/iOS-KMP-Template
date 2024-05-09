@@ -62,7 +62,6 @@ struct SettingsView: View {
                     NavigationLink("Open Source") {}
                 }
             }
-            .navigationBarTitle("")
             .navigationDestination(for: NavigableView.self) {
                 $0.view
             }
