@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("isDarkMode") private var isDarkMode = true
-    @AppStorage("locale") private var selectedLanguage: String = LanguageType.english.identifier
+    @AppStorage(Constants.darkModeKey) private var isDarkMode = true
+    @AppStorage(Constants.localeKey) private var selectedLanguage: String = LanguageType.english.identifier
     
     @Bindable private var viewModel: SettingsViewModel
     @Bindable private var router: Router

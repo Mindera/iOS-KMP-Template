@@ -20,6 +20,7 @@
 		373615D82BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */; };
 		373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */; };
 		3791F9712BCC468F005A0378 /* CurrencyExchangeKMP in Frameworks */ = {isa = PBXBuildFile; productRef = 3791F9702BCC468F005A0378 /* CurrencyExchangeKMP */; };
+		8463335E2BECFF8D00FF8E83 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463335D2BECFF8D00FF8E83 /* Bundle+Extensions.swift */; };
 		8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487BE012BCD852E0060B600 /* Color+Extensions.swift */; };
 		848E293C2BDBABFC0050FC23 /* MenuTabElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E293B2BDBABFC0050FC23 /* MenuTabElement.swift */; };
 		848E293E2BDBAFD20050FC23 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E293D2BDBAFD20050FC23 /* HomeCoordinator.swift */; };
@@ -83,6 +84,7 @@
 		373615D52BA8250900F0854D /* iOSKMPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPUITests.swift; sourceTree = "<group>"; };
 		373615D72BA8250900F0854D /* iOSKMPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKMPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewModel.swift; sourceTree = "<group>"; };
+		8463335D2BECFF8D00FF8E83 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		8487BE012BCD852E0060B600 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		848E293B2BDBABFC0050FC23 /* MenuTabElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabElement.swift; sourceTree = "<group>"; };
 		848E293D2BDBAFD20050FC23 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				8487BE012BCD852E0060B600 /* Color+Extensions.swift */,
 				84903B1A2BD189DE00B2F094 /* UIApplication+Extensions.swift */,
 				84C3D2622BE90316004C5E4F /* View+Extensions.swift */,
+				8463335D2BECFF8D00FF8E83 /* Bundle+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				373615BB2BA8250800F0854D /* CurrencyExchangeView.swift in Sources */,
 				373615E82BA846EC00F0854D /* CurrencyExchangeViewModel.swift in Sources */,
 				8499064F2BCEAD13002F9845 /* MenuTabView.swift in Sources */,
+				8463335E2BECFF8D00FF8E83 /* Bundle+Extensions.swift in Sources */,
 				84B6FBD92BDAB91A000F2532 /* TabBarCoordinatorDelegate.swift in Sources */,
 				849B5E882BDBFFF300D3233B /* SettingsCoordinatorDelegate.swift in Sources */,
 				8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */,
