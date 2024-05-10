@@ -25,5 +25,7 @@ enum Constants {
     
     // MARK: - String
     
+    static let localeKey: String = "locale"
+    static let darkModeKey: String = "isDarkMode"
     static let repositoryURLString: String = "https://github.com/Mindera/iOS-KMP-Template"
 }
