@@ -2,14 +2,27 @@
 //  CurrencyExchangeRateModel.swift
 //  iOSKMP
 //
-//  Created by Timea Varga on 12.04.2024.
+//  Created by timea.varga on 13.05.2024.
 //
 
+import SwiftData
 import Foundation
 
-struct CurrencyExchangeRateModel: Identifiable {
-    let code: String
-    let currencyName: String
-    let exchangeRate: Double
-    let id: String
+@Model
+final class CurrencyExchangeRateModel {
+    @Attribute(.unique) var id: String
+    var code: String
+    var currencyName: String
+    var exchangeRate: Double
+    var isCurrentDateItem: Bool
+    var timestamp: Date
+    
+    init(id: String, code: String, currencyName: String, exchangeRate: Double, isCurrentDateItem: Bool, timestamp: Date = Date()) {
+        self.id = id
+        self.code = code
+        self.currencyName = currencyName
+        self.exchangeRate = exchangeRate
+        self.isCurrentDateItem = isCurrentDateItem
+        self.timestamp = timestamp
+    }
 }

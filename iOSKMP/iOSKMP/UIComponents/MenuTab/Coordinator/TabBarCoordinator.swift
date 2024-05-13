@@ -6,15 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 final class TabBarCoordinator: RootCoordinator {
     
     // MARK: - Properties
     
+    private let modelContext: ModelContext
     private var homeCoordinator: HomeCoordinator?
     private var settingsCoordinator: SettingsCoordinator?
     
     // MARK: - Internal methods
+    
+    init(modelContext: ModelContext) {
+        self.modelContext = modelContext
+    }
     
     func start() -> AnyView {
         makeMenuTabView()
@@ -31,7 +37,7 @@ final class TabBarCoordinator: RootCoordinator {
     }
     
     private func makeHomeRootTab() -> MenuTabElement {
-        let homeCoordinator = HomeCoordinator()
+        let homeCoordinator = HomeCoordinator(modelContext: modelContext)
         let homeView = homeCoordinator.start()
         self.homeCoordinator = homeCoordinator
         return makeMenuTabElement(view: homeView, type: .home)

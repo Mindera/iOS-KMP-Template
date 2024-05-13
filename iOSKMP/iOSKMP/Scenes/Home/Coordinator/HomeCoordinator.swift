@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 final class HomeCoordinator: RootCoordinator {
     
     // MARK: - Properties
     
+    private let modelContext: ModelContext
     private var viewModel: CurrencyExchangeViewModel?
+    
+    init(modelContext: ModelContext) {
+        self.modelContext = modelContext
+    }
     
     // MARK: - Internal methods
     
@@ -26,7 +32,7 @@ final class HomeCoordinator: RootCoordinator {
     // MARK: - Private methods
     
     private func makeHomeView() -> AnyView {
-        let viewModel = CurrencyExchangeViewModel(selectedViewMode: .graph)
+        let viewModel = CurrencyExchangeViewModel(modelContext: modelContext, selectedViewMode: .graph)
         let view = CurrencyExchangeView(viewModel: viewModel)
         self.viewModel = viewModel
         

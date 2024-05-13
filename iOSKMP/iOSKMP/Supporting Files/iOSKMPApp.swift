@@ -6,24 +6,33 @@
 //
 
 import SwiftUI
+import SwiftData
 import CurrencyExchangeKMP
 
 @main
 struct iOSKMPApp: App {
     // MARK: - Properties
     
+    private let modelContainer: ModelContainer
     private let tabBarCoordinator: RootCoordinator
     
     var body: some Scene {
         WindowGroup {
             tabBarCoordinator.start()
         }
+        .modelContainer(modelContainer)
     }
     
     // MARK: - Init
     
     init() {
-        tabBarCoordinator = TabBarCoordinator()
+        do {
+            modelContainer = try ModelContainer(for: CurrencyExchangeModel.self)
+        } catch {
+            fatalError("Failed to create ModelContainer for CurrencyExchangeModel.")
+        }
+        
+        tabBarCoordinator = TabBarCoordinator(modelContext: modelContainer.mainContext)
         IOSKoinHelperKt.doInitKoin()
         setupLocaleValue()
         Bundle.swizzleLocalization()
