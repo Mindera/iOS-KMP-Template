@@ -27,9 +27,9 @@ struct iOSKMPApp: App {
     
     init() {
         do {
-            modelContainer = try ModelContainer(for: CurrencyExchangeModel.self)
+            modelContainer = try ModelContainer(for: CurrencyExchangeModel.self, CurrencyExchangeRateModel.self)
         } catch {
-            fatalError("Failed to create ModelContainer for CurrencyExchangeModel.")
+            fatalError("Failed to create ModelContainer for CurrencyExchangeModel and/or CurrencyExchangeRateModel.")
         }
         
         tabBarCoordinator = TabBarCoordinator(modelContext: modelContainer.mainContext)

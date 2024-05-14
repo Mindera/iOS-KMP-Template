@@ -10,13 +10,13 @@ import Foundation
 
 @Model
 final class CurrencyExchangeModel {
-    @Attribute(.unique) var id: String
+    @Attribute(.unique) var referenceId: String
     var date: String
-    @Relationship(deleteRule: .cascade) var exchangeRates: [CurrencyExchangeRateModel]
+    var exchangeRates: [CurrencyExchangeRate]
     var timestamp: Date
     
-    init(id: String, date: String, exchangeRates: [CurrencyExchangeRateModel], timestamp: Date = Date()) {
-        self.id = id
+    init(referenceId: String, date: String, exchangeRates: [CurrencyExchangeRate], timestamp: Date = Date()) {
+        self.referenceId = referenceId
         self.date = date
         self.exchangeRates = exchangeRates
         self.timestamp = timestamp

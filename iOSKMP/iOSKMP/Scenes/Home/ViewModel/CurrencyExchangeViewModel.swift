@@ -40,12 +40,8 @@ import CurrencyExchangeKMP
             // TODO: Handle error
         }
         
-        let predicate = #Predicate<CurrencyExchangeRateModel> {
-            $0.isCurrentDateItem == true
-        }
-        
         do {
-            let descriptor = FetchDescriptor<CurrencyExchangeRateModel>(predicate: predicate, sortBy: [SortDescriptor(\.timestamp)])
+            let descriptor = FetchDescriptor<CurrencyExchangeRateModel>(sortBy: [SortDescriptor(\.timestamp)])
             let fetchedCurrentDayExhangeRates = try modelContext.fetch(descriptor)
             currentDayExhangeRates = fetchedCurrentDayExhangeRates
             persistedCurrentDayExhangeRates = fetchedCurrentDayExhangeRates
@@ -89,11 +85,10 @@ import CurrencyExchangeKMP
         
         exchangeRates.forEach {
             let currencyExchangeRate = CurrencyExchangeRateModel(
-                id: $0.id,
+                referenceId: $0.id,
                 code: $0.code,
                 currencyName: $0.currency,
-                exchangeRate: $0.currencyRate, 
-                isCurrentDateItem: true
+                exchangeRate: $0.currencyRate
             )
             
             modelContext.insert(currencyExchangeRate)
@@ -115,15 +110,15 @@ import CurrencyExchangeKMP
         
         launches.forEach {
             let currencyExhange = CurrencyExchangeModel(
-                id: $0.no,
+                referenceId: $0.no,
                 date: $0.effectiveDate,
                 exchangeRates: $0.rates.map {
-                    CurrencyExchangeRateModel(
+                    CurrencyExchangeRate(
                         id: $0.id,
                         code: $0.code,
                         currencyName: $0.currency,
-                        exchangeRate: $0.currencyRate, 
-                        isCurrentDateItem: false)
+                        exchangeRate: $0.currencyRate
+                    )
                 }
             )
             currencyExchangeModels.append(currencyExhange)
