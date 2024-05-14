@@ -33,7 +33,7 @@ import SwiftUI
         delegate?.didSelectLibraryLicenses()
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func calculateAppSize() {
         let bundlePath = Bundle.main.bundlePath

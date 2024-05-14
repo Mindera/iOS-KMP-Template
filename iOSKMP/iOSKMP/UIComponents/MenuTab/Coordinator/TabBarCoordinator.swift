@@ -16,7 +16,7 @@ final class TabBarCoordinator: RootCoordinator {
     private var homeCoordinator: HomeCoordinator?
     private var settingsCoordinator: SettingsCoordinator?
     
-    // MARK: - Internal methods
+    // MARK: - Internal
     
     init(modelContext: ModelContext) {
         self.modelContext = modelContext
@@ -26,7 +26,7 @@ final class TabBarCoordinator: RootCoordinator {
         makeMenuTabView()
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func makeMenuTabView() -> AnyView {
         let tabs = [makeHomeRootTab(), makeSettingsRootTab()]

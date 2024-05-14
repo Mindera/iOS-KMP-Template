@@ -14,13 +14,13 @@ final class SettingsCoordinator {
     private let router = Router()
     private var libraryLicensesCoordinator: LibraryLicensesCoordinator?
     
-    // MARK: - Internal methods
+    // MARK: - Internal
     
     func popToRoot() {
         router.popToRoot()
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func makeSettingsView() -> AnyView {
         let viewModel = SettingsViewModel(delegate: self)

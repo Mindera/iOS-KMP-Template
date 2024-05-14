@@ -23,13 +23,13 @@ import AcknowList
         loadAcknowledgements()
     }
     
-    // MARK: - Internal methods
+    // MARK: - Internal
     
     func goBack() {
         delegate?.didSelectBack()
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func loadAcknowledgements() {
         guard let url = Bundle.main.url(forResource: "Package", withExtension: "resolved"),

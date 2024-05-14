@@ -30,9 +30,10 @@ import CurrencyExchangeKMP
         observeLastTenDaysData()
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func fetchData() {
+        // Fetch last 10 days data from database
         do {
             let descriptor = FetchDescriptor<CurrencyExchangeModel>(sortBy: [SortDescriptor(\.timestamp)])
             lastTenDaysCurrencyExchangeModels = try modelContext.fetch(descriptor)
@@ -40,6 +41,7 @@ import CurrencyExchangeKMP
             // TODO: Handle error
         }
         
+        // Fetch current date data from database
         do {
             let descriptor = FetchDescriptor<CurrencyExchangeRateModel>(sortBy: [SortDescriptor(\.timestamp)])
             let fetchedCurrentDayExhangeRates = try modelContext.fetch(descriptor)
@@ -77,6 +79,7 @@ import CurrencyExchangeKMP
     }
     
     private func saveCurrentDateExhangeRates(_ exchangeRates: [RatesItem]) {
+        // Delete outdated data from database
         persistedCurrentDayExhangeRates.forEach {
             modelContext.delete($0)
         }

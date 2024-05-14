@@ -19,7 +19,7 @@ final class HomeCoordinator: RootCoordinator {
         self.modelContext = modelContext
     }
     
-    // MARK: - Internal methods
+    // MARK: - Internal
     
     func start() -> AnyView {
         makeHomeView()
@@ -29,7 +29,7 @@ final class HomeCoordinator: RootCoordinator {
         viewModel?.selectedViewMode = .graph
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func makeHomeView() -> AnyView {
         let viewModel = CurrencyExchangeViewModel(modelContext: modelContext, selectedViewMode: .graph)
