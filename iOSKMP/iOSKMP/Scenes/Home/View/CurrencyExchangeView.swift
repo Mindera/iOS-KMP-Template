@@ -22,7 +22,7 @@ struct CurrencyExchangeView: View {
             switch viewModel.selectedViewMode {
             case .graph:
                 Chart {
-                    ForEach(viewModel.currentDayExhangeRates) { exchangeRate in
+                    ForEach(viewModel.currentDayExchangeRates) { exchangeRate in
                         LineMark(
                             x: .value("", exchangeRate.code),
                             y: .value("", exchangeRate.exchangeRate)

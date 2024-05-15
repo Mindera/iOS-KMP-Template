@@ -51,6 +51,7 @@
 		84B6FBDE2BDAC05B000F2532 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6FBDD2BDAC05B000F2532 /* SettingsCoordinator.swift */; };
 		84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */; };
 		84C3D2632BE90316004C5E4F /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3D2622BE90316004C5E4F /* View+Extensions.swift */; };
+		84E759B02BF4DCE800724991 /* DataModelActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E759AF2BF4DCE800724991 /* DataModelActor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		84B6FBDD2BDAC05B000F2532 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		84B995AE2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewMode.swift; sourceTree = "<group>"; };
 		84C3D2622BE90316004C5E4F /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		84E759AF2BF4DCE800724991 /* DataModelActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelActor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				84B6FBC72BDA7C6E000F2532 /* Coordinator */,
+				84E759B12BF4F92D00724991 /* Persistence */,
 				849906552BCEDF5B002F9845 /* Resources */,
 				8491A3B62BC9655300FF9103 /* Scenes */,
 				84FA60322BD012840020C66E /* Supporting Files */,
@@ -451,6 +454,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		84E759B12BF4F92D00724991 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				84E759AF2BF4DCE800724991 /* DataModelActor.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		84FA60322BD012840020C66E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +618,7 @@
 				846333632BF2240B00FF8E83 /* CurrencyExchangeRateModel.swift in Sources */,
 				8463335E2BECFF8D00FF8E83 /* Bundle+Extensions.swift in Sources */,
 				84B6FBD92BDAB91A000F2532 /* TabBarCoordinatorDelegate.swift in Sources */,
+				84E759B02BF4DCE800724991 /* DataModelActor.swift in Sources */,
 				849B5E882BDBFFF300D3233B /* SettingsCoordinatorDelegate.swift in Sources */,
 				8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */,
 				84903B1B2BD189DE00B2F094 /* UIApplication+Extensions.swift in Sources */,

@@ -12,11 +12,11 @@ final class HomeCoordinator: RootCoordinator {
     
     // MARK: - Properties
     
-    private let modelContext: ModelContext
+    private let modelContainer: ModelContainer
     private var viewModel: CurrencyExchangeViewModel?
     
-    init(modelContext: ModelContext) {
-        self.modelContext = modelContext
+    init(modelContainer: ModelContainer) {
+        self.modelContainer = modelContainer
     }
     
     // MARK: - Internal
@@ -32,7 +32,7 @@ final class HomeCoordinator: RootCoordinator {
     // MARK: - Private
     
     private func makeHomeView() -> AnyView {
-        let viewModel = CurrencyExchangeViewModel(modelContext: modelContext, selectedViewMode: .graph)
+        let viewModel = CurrencyExchangeViewModel(dataCoordinator: DataModelActor(container: modelContainer), selectedViewMode: .graph)
         let view = CurrencyExchangeView(viewModel: viewModel)
         self.viewModel = viewModel
         

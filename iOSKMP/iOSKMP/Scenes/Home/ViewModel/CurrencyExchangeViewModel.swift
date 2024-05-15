@@ -14,15 +14,15 @@ import CurrencyExchangeKMP
     
     var selectedViewMode: CurrencyExchangeViewMode
     var lastTenDaysCurrencyExchangeModels: [CurrencyExchangeModel] = []
-    var currentDayExhangeRates: [CurrencyExchangeRateModel] = []
+    var currentDayExchangeRates: [CurrencyExchangeRateModel] = []
     
     private let coreModel = DIHelper().viewModel
-    private let modelContext: ModelContext
+    private let dataCoordinator: DataModelActor
     
     // MARK: - Init
     
-    init(modelContext: ModelContext, selectedViewMode: CurrencyExchangeViewMode) {
-        self.modelContext = modelContext
+    init(dataCoordinator: DataModelActor, selectedViewMode: CurrencyExchangeViewMode) {
+        self.dataCoordinator = dataCoordinator
         self.selectedViewMode = selectedViewMode
         fetchData()
         observeCurrentDateData()
@@ -32,20 +32,10 @@ import CurrencyExchangeKMP
     // MARK: - Private
     
     private func fetchData() {
-        // Fetch last 10 days data from database
-        do {
-            let descriptor = FetchDescriptor<CurrencyExchangeModel>(sortBy: [SortDescriptor(\.timestamp)])
-            lastTenDaysCurrencyExchangeModels = try modelContext.fetch(descriptor)
-        } catch {
-            // TODO: Handle error
-        }
-        
-        // Fetch current date data from database
-        do {
-            let descriptor = FetchDescriptor<CurrencyExchangeRateModel>(sortBy: [SortDescriptor(\.timestamp)])
-            currentDayExhangeRates = try modelContext.fetch(descriptor)
-        } catch {
-            // TODO: Handle error
+        Task {
+            let fetchedData = await dataCoordinator.fetchCurrencyExchangeData()
+            currentDayExchangeRates = fetchedData.currencyExchangeRates
+            lastTenDaysCurrencyExchangeModels = fetchedData.currencyExchangeModels
         }
     }
     
@@ -76,11 +66,8 @@ import CurrencyExchangeKMP
     }
     
     private func saveCurrentDateExhangeRates(_ exchangeRates: [RatesItem]) {
-        do {
-            // Delete all data from database
-            try modelContext.delete(model: CurrencyExchangeRateModel.self)
-        } catch {
-            // TODO: Handle error
+        Task {
+            await dataCoordinator.delete(CurrencyExchangeRateModel.self)
         }
         
         var currencyExchangeRates: [CurrencyExchangeRateModel] = []
@@ -93,19 +80,19 @@ import CurrencyExchangeKMP
                 exchangeRate: $0.currencyRate
             )
             
-            modelContext.insert(currencyExchangeRate)
             currencyExchangeRates.append(currencyExchangeRate)
+            
+            Task {
+                await dataCoordinator.add(currencyExchangeRate)
+            }
         }
         
-        currentDayExhangeRates = currencyExchangeRates
+        currentDayExchangeRates = currencyExchangeRates
     }
     
     private func saveLaunches(_ launches: [CurrencyExchangeResponseItem]) {
-        do {
-            // Delete all data from database
-            try modelContext.delete(model: CurrencyExchangeModel.self)
-        } catch {
-            // TODO: Handle error
+        Task {
+            await dataCoordinator.delete(CurrencyExchangeModel.self)
         }
         
         var currencyExchangeModels: [CurrencyExchangeModel] = []
@@ -124,7 +111,10 @@ import CurrencyExchangeKMP
                 }
             )
             currencyExchangeModels.append(currencyExhange)
-            modelContext.insert(currencyExhange)
+            
+            Task {
+                await dataCoordinator.add(currencyExhange)
+            }
         }
         
         lastTenDaysCurrencyExchangeModels = currencyExchangeModels

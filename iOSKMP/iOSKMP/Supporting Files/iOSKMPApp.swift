@@ -33,7 +33,7 @@ struct iOSKMPApp: App {
             fatalError("Failed to create ModelContainer for CurrencyExchangeModel and/or CurrencyExchangeRateModel.")
         }
         
-        tabBarCoordinator = TabBarCoordinator(modelContext: modelContainer.mainContext)
+        tabBarCoordinator = TabBarCoordinator(modelContainer: modelContainer)
         IOSKoinHelperKt.doInitKoin()
         setupLocaleValue()
         Bundle.swizzleLocalization()
