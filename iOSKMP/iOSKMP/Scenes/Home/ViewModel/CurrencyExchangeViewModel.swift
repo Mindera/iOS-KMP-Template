@@ -18,7 +18,6 @@ import CurrencyExchangeKMP
     
     private let coreModel = DIHelper().viewModel
     private let modelContext: ModelContext
-    private var persistedCurrentDayExhangeRates: [CurrencyExchangeRateModel] = []
     
     // MARK: - Init
     
@@ -44,9 +43,7 @@ import CurrencyExchangeKMP
         // Fetch current date data from database
         do {
             let descriptor = FetchDescriptor<CurrencyExchangeRateModel>(sortBy: [SortDescriptor(\.timestamp)])
-            let fetchedCurrentDayExhangeRates = try modelContext.fetch(descriptor)
-            currentDayExhangeRates = fetchedCurrentDayExhangeRates
-            persistedCurrentDayExhangeRates = fetchedCurrentDayExhangeRates
+            currentDayExhangeRates = try modelContext.fetch(descriptor)
         } catch {
             // TODO: Handle error
         }
@@ -79,9 +76,11 @@ import CurrencyExchangeKMP
     }
     
     private func saveCurrentDateExhangeRates(_ exchangeRates: [RatesItem]) {
-        // Delete outdated data from database
-        persistedCurrentDayExhangeRates.forEach {
-            modelContext.delete($0)
+        do {
+            // Delete all data from database
+            try modelContext.delete(model: CurrencyExchangeRateModel.self)
+        } catch {
+            // TODO: Handle error
         }
         
         var currencyExchangeRates: [CurrencyExchangeRateModel] = []
