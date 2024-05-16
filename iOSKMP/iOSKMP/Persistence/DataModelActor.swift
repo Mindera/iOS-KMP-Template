@@ -9,6 +9,7 @@ import Foundation
 import SwiftData
 
 actor DataModelActor: ModelActor {
+    
     // MARK: - Properties
     
     let modelContainer: ModelContainer
