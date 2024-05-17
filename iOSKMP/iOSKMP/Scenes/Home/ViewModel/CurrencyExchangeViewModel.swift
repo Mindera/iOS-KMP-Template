@@ -13,16 +13,16 @@ import CurrencyExchangeKMP
     // MARK: - Properties
     
     var selectedViewMode: CurrencyExchangeViewMode
-    var lastTenDaysCurrencyExchangeModels: [CurrencyExchangeModel] = []
-    var currentDayExchangeRates: [CurrencyExchangeRateModel] = []
+    var lastTenDaysCurrencyExchangeModels: [CurrencyExchangeListViewModel] = []
+    var currentDayExchangeRates: [CurrencyExchangeRate] = []
     
     private let coreModel = DIHelper().viewModel
-    private let dataCoordinator: DataModelActor
+    private let modelContainer: ModelContainer
     
     // MARK: - Init
     
-    init(dataCoordinator: DataModelActor, selectedViewMode: CurrencyExchangeViewMode) {
-        self.dataCoordinator = dataCoordinator
+    init(modelContainer: ModelContainer, selectedViewMode: CurrencyExchangeViewMode) {
+        self.modelContainer = modelContainer
         self.selectedViewMode = selectedViewMode
         fetchData()
         observeCurrentDateData()
@@ -33,9 +33,30 @@ import CurrencyExchangeKMP
     
     private func fetchData() {
         Task {
+            let dataCoordinator = DataModelActor(modelContainer: modelContainer)
             let fetchedData = await dataCoordinator.fetchCurrencyExchangeData()
-            currentDayExchangeRates = fetchedData.currencyExchangeRates
-            lastTenDaysCurrencyExchangeModels = fetchedData.currencyExchangeModels
+            currentDayExchangeRates = fetchedData.currencyExchangeRates.map {
+                CurrencyExchangeRate(
+                    id: $0.id,
+                    code: $0.code,
+                    currencyName: $0.currencyName,
+                    exchangeRate: $0.exchangeRate
+                )
+            }
+            lastTenDaysCurrencyExchangeModels = fetchedData.currencyExchangeModels.map {
+                CurrencyExchangeListViewModel(
+                    id: $0.id,
+                    date: $0.date,
+                    exchangeRates: $0.exchangeRates.map {
+                        CurrencyExchangeRate(
+                            id: $0.id,
+                            code: $0.code,
+                            currencyName: $0.currencyName,
+                            exchangeRate: $0.exchangeRate
+                        )
+                    }
+                )
+            }
         }
     }
     
@@ -48,7 +69,7 @@ import CurrencyExchangeKMP
             } else {
                 guard let exchangeRates = newState.launches.first?.rates else { return }
                 
-                self?.saveCurrentDateExhangeRates(exchangeRates)
+                self?.saveCurrentDateExchangeRates(exchangeRates)
             }
         }
     }
@@ -65,58 +86,81 @@ import CurrencyExchangeKMP
         }
     }
     
-    private func saveCurrentDateExhangeRates(_ exchangeRates: [RatesItem]) {
+    private func saveCurrentDateExchangeRates(_ exchangeRates: [RatesItem]) {
         Task {
+            let dataCoordinator = DataModelActor(modelContainer: self.modelContainer)
             await dataCoordinator.delete(CurrencyExchangeRateModel.self)
         }
         
-        var currencyExchangeRates: [CurrencyExchangeRateModel] = []
-        
-        exchangeRates.forEach {
-            let currencyExchangeRate = CurrencyExchangeRateModel(
-                referenceId: $0.id,
-                code: $0.code,
-                currencyName: $0.currency,
-                exchangeRate: $0.currencyRate
-            )
-            
-            currencyExchangeRates.append(currencyExchangeRate)
-            
+        exchangeRates.forEach { ratesItem in
             Task {
-                await dataCoordinator.add(currencyExchangeRate)
+                let timestamp = Date()
+                let dataCoordinator = DataModelActor(modelContainer: modelContainer)
+                await dataCoordinator.addCurrencyExchangeRateItem(
+                    id: ratesItem.id,
+                    code: ratesItem.code,
+                    currencyName: ratesItem.currency,
+                    exchangeRate: ratesItem.currencyRate, 
+                    timestamp: timestamp
+                )
+                
+                currentDayExchangeRates = await dataCoordinator.fetchCurrencyExchangeRates().map {
+                    CurrencyExchangeRate(
+                        id: $0.id,
+                        code: $0.code,
+                        currencyName: $0.currencyName,
+                        exchangeRate: $0.exchangeRate
+                    )
+                }
             }
         }
         
-        currentDayExchangeRates = currencyExchangeRates
+        
     }
     
     private func saveLaunches(_ launches: [CurrencyExchangeResponseItem]) {
         Task {
+            let dataCoordinator = DataModelActor(modelContainer: modelContainer)
             await dataCoordinator.delete(CurrencyExchangeModel.self)
         }
         
-        var currencyExchangeModels: [CurrencyExchangeModel] = []
-        
-        launches.forEach {
-            let currencyExhange = CurrencyExchangeModel(
-                referenceId: $0.no,
-                date: $0.effectiveDate,
-                exchangeRates: $0.rates.map {
-                    CurrencyExchangeRate(
-                        id: $0.id,
-                        code: $0.code,
-                        currencyName: $0.currency,
-                        exchangeRate: $0.currencyRate
-                    )
-                }
-            )
-            currencyExchangeModels.append(currencyExhange)
+        launches.forEach { currencyExchangeResponse in
+            let exchangeRates = currencyExchangeResponse.rates.map {
+                CurrencyExchangeRate(
+                    id: $0.id,
+                    code: $0.code,
+                    currencyName: $0.currency,
+                    exchangeRate: $0.currencyRate
+                )
+            }
+            
+            let currencyExchangeTimestamp = Date()
             
             Task {
-                await dataCoordinator.add(currencyExhange)
+                let dataCoordinator = DataModelActor(modelContainer: modelContainer)
+                await dataCoordinator.addCurrencyExchangeItem(
+                    id: currencyExchangeResponse.no,
+                    date: currencyExchangeResponse.effectiveDate,
+                    exchangeRates: exchangeRates,
+                    timestamp: currencyExchangeTimestamp
+                )
+                lastTenDaysCurrencyExchangeModels = await dataCoordinator.fetchCurrencyExchangeModels().map {
+                    CurrencyExchangeListViewModel(
+                        id: $0.id,
+                        date: $0.date,
+                        exchangeRates: $0.exchangeRates.map {
+                            CurrencyExchangeRate(
+                                id: $0.id,
+                                code: $0.code,
+                                currencyName: $0.currencyName,
+                                exchangeRate: $0.exchangeRate
+                            )
+                        }
+                    )
+                }
             }
         }
         
-        lastTenDaysCurrencyExchangeModels = currencyExchangeModels
+        
     }
 }

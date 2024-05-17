@@ -23,6 +23,7 @@
 		8463335E2BECFF8D00FF8E83 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463335D2BECFF8D00FF8E83 /* Bundle+Extensions.swift */; };
 		846333612BF2223F00FF8E83 /* CurrencyExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846333602BF2223F00FF8E83 /* CurrencyExchangeModel.swift */; };
 		846333632BF2240B00FF8E83 /* CurrencyExchangeRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846333622BF2240B00FF8E83 /* CurrencyExchangeRateModel.swift */; };
+		84864E322BF7C300003CBB12 /* CurrencyExchangeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84864E312BF7C300003CBB12 /* CurrencyExchangeListViewModel.swift */; };
 		8487BE022BCD852E0060B600 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487BE012BCD852E0060B600 /* Color+Extensions.swift */; };
 		848E293C2BDBABFC0050FC23 /* MenuTabElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E293B2BDBABFC0050FC23 /* MenuTabElement.swift */; };
 		848E293E2BDBAFD20050FC23 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E293D2BDBAFD20050FC23 /* HomeCoordinator.swift */; };
@@ -89,6 +90,7 @@
 		8463335D2BECFF8D00FF8E83 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		846333602BF2223F00FF8E83 /* CurrencyExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeModel.swift; sourceTree = "<group>"; };
 		846333622BF2240B00FF8E83 /* CurrencyExchangeRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeRateModel.swift; sourceTree = "<group>"; };
+		84864E312BF7C300003CBB12 /* CurrencyExchangeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeListViewModel.swift; sourceTree = "<group>"; };
 		8487BE012BCD852E0060B600 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		848E293B2BDBABFC0050FC23 /* MenuTabElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabElement.swift; sourceTree = "<group>"; };
 		848E293D2BDBAFD20050FC23 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 		8491A3BA2BC965D000FF9103 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				84864E312BF7C300003CBB12 /* CurrencyExchangeListViewModel.swift */,
 				373615E72BA846EC00F0854D /* CurrencyExchangeViewModel.swift */,
 			);
 			path = ViewModel;
@@ -640,6 +643,7 @@
 				84B995AF2BCD3ECC00912AF4 /* CurrencyExchangeViewMode.swift in Sources */,
 				849906542BCED6D4002F9845 /* Constants.swift in Sources */,
 				848E29462BDBD6EA0050FC23 /* Router.swift in Sources */,
+				84864E322BF7C300003CBB12 /* CurrencyExchangeListViewModel.swift in Sources */,
 				371B33C22BDA633B00192ED6 /* LibraryLicencesView.swift in Sources */,
 				84B6FBD72BDA9151000F2532 /* MenuTabViewModel.swift in Sources */,
 				373615B92BA8250800F0854D /* iOSKMPApp.swift in Sources */,

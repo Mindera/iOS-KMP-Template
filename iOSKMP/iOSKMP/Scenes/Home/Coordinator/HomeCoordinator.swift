@@ -32,7 +32,7 @@ final class HomeCoordinator: RootCoordinator {
     // MARK: - Private
     
     private func makeHomeView() -> AnyView {
-        let viewModel = CurrencyExchangeViewModel(dataCoordinator: DataModelActor(container: modelContainer), selectedViewMode: .graph)
+        let viewModel = CurrencyExchangeViewModel(modelContainer: modelContainer, selectedViewMode: .graph)
         let view = CurrencyExchangeView(viewModel: viewModel)
         self.viewModel = viewModel
         
