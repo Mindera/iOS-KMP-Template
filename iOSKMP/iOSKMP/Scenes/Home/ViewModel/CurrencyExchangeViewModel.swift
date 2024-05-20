@@ -95,11 +95,6 @@ import CurrencyExchangeKMP
     }
     
     private func saveCurrentDateExchangeRates(_ exchangeRates: [RatesItem]) {
-        Task {
-            let dataCoordinator = DataModelActor(modelContainer: modelContainer)
-            await dataCoordinator.delete(CurrencyExchangeRateModel.self)
-        }
-        
         let orderedExchangeRates = exchangeRates.map {
             ExchangeRateWithTimestamp(
                 exchangeRate:
@@ -115,6 +110,10 @@ import CurrencyExchangeKMP
         Task {
             let dataCoordinator = DataModelActor(modelContainer: modelContainer)
         
+            // Remove all exchange rate data from database
+            await dataCoordinator.delete(CurrencyExchangeRateModel.self)
+            
+            // Add new exchange rates in database
             await withDiscardingTaskGroup { taskGroup in
                 orderedExchangeRates.forEach { ratesItem in
                     taskGroup.addTask {
@@ -128,11 +127,6 @@ import CurrencyExchangeKMP
     }
     
     private func saveLaunches(_ launches: [CurrencyExchangeResponseItem]) {
-        Task {
-            let dataCoordinator = DataModelActor(modelContainer: modelContainer)
-            await dataCoordinator.delete(CurrencyExchangeModel.self)
-        }
-        
         let orderedExchangeItems = launches.map {
             CurrencyExchangeWithTimestamp(
                 currencyExchange:
@@ -155,6 +149,10 @@ import CurrencyExchangeKMP
         Task {
             let dataCoordinator = DataModelActor(modelContainer: modelContainer)
             
+            // Remove all currency exchange data from database
+            await dataCoordinator.delete(CurrencyExchangeModel.self)
+            
+            // Add new currency exchange data in database
             await withDiscardingTaskGroup { taskGroup in
                 orderedExchangeItems.forEach { currencyExchangeItem in
                     taskGroup.addTask {
