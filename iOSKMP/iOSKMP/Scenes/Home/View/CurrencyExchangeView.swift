@@ -54,5 +54,12 @@ struct CurrencyExchangeView: View {
                 .scrollIndicators(.hidden)
             }
         }
+        .alert(isPresented: $viewModel.shouldPresentAlert, error: viewModel.alertError) { _ in
+            
+        } message: { error in
+            if let errorMessage = error.recoverySuggestion {
+                Text(errorMessage)
+            }
+        }
     }
 }

@@ -10,6 +10,8 @@ import SwiftData
 
 typealias ExchangeRate = (id: String, code: String, currencyName: String, exchangeRate: Double)
 typealias CurrencyExchange = (id: String, date: String, exchangeRates: [CurrencyExchangeRate])
+typealias ExchangeRateWithTimestamp = (exchangeRate: ExchangeRate, timestamp: Date)
+typealias CurrencyExchangeWithTimestamp = (currencyExchange: CurrencyExchange, timestamp: Date)
 
 actor DataModelActor: ModelActor {
     
@@ -29,27 +31,27 @@ actor DataModelActor: ModelActor {
     
     // MARK: - Internal
     
-    func addCurrencyExchangeRateItem(id: String, code: String, currencyName: String, exchangeRate: Double, timestamp: Date) {
+    func addCurrencyExchangeRateItem(_ item: ExchangeRateWithTimestamp) {
         modelContext.insert(
             CurrencyExchangeRateModel(
-                referenceId: id,
-                code: code,
-                currencyName: currencyName,
-                exchangeRate: exchangeRate,
-                timestamp: timestamp
+                referenceId: item.exchangeRate.id,
+                code: item.exchangeRate.code,
+                currencyName: item.exchangeRate.currencyName,
+                exchangeRate: item.exchangeRate.exchangeRate,
+                timestamp: item.timestamp
             )
         )
         
         saveDataIfNeeded()
     }
     
-    func addCurrencyExchangeItem(id: String, date: String, exchangeRates: [CurrencyExchangeRate], timestamp: Date) {
+    func addCurrencyExchangeItem(_ item: CurrencyExchangeWithTimestamp) {
         modelContext.insert(
             CurrencyExchangeModel(
-                referenceId: id,
-                date: date,
-                exchangeRates: exchangeRates,
-                timestamp: timestamp
+                referenceId: item.currencyExchange.id,
+                date: item.currencyExchange.date,
+                exchangeRates: item.currencyExchange.exchangeRates,
+                timestamp: item.timestamp
             )
         )
         
@@ -64,36 +66,28 @@ actor DataModelActor: ModelActor {
         }
     }
     
-    func fetchCurrencyExchangeData() -> (currencyExchangeRates: [ExchangeRate], currencyExchangeModels: [CurrencyExchange]) {
-        let currencyExchangeRates = fetchCurrencyExchangeRates()
-        let currencyExchangeModels =  fetchCurrencyExchangeModels()
+    func fetchCurrencyExchangeData() throws -> (currencyExchangeRates: [ExchangeRate], currencyExchangeModels: [CurrencyExchange]) {
+        let currencyExchangeRates = try fetchCurrencyExchangeRates()
+        let currencyExchangeModels = try fetchCurrencyExchangeModels()
         
         return (currencyExchangeRates, currencyExchangeModels)
     }
     
-    func fetchCurrencyExchangeRates() -> [ExchangeRate] {
+    func fetchCurrencyExchangeRates() throws -> [ExchangeRate] {
         var currencyExchangeRates: [ExchangeRate] = []
         
-        do {
-            let descriptor = FetchDescriptor<CurrencyExchangeRateModel>(sortBy: [SortDescriptor(\.timestamp)])
-            currencyExchangeRates = try modelContext.fetch(descriptor).map { ($0.referenceId, $0.code, $0.currencyName, $0.exchangeRate) }
-        } catch {
-            // TODO: Handle error
-        }
+        let descriptor = FetchDescriptor<CurrencyExchangeRateModel>(sortBy: [SortDescriptor(\.timestamp)])
+        currencyExchangeRates = try modelContext.fetch(descriptor).map { ($0.referenceId, $0.code, $0.currencyName, $0.exchangeRate) }
         
         return currencyExchangeRates
     }
     
-    func fetchCurrencyExchangeModels() -> [CurrencyExchange] {
+    func fetchCurrencyExchangeModels() throws -> [CurrencyExchange] {
         var currencyExchangeModels: [CurrencyExchange] = []
         
-        do {
-            let descriptor = FetchDescriptor<CurrencyExchangeModel>(sortBy: [SortDescriptor(\.timestamp)])
-            currencyExchangeModels = try modelContext.fetch(descriptor).map { ($0.referenceId, $0.date, $0.exchangeRates) }
-        } catch {
-            // TODO: Handle error
-        }
-        
+        let descriptor = FetchDescriptor<CurrencyExchangeModel>(sortBy: [SortDescriptor(\.timestamp)])
+        currencyExchangeModels = try modelContext.fetch(descriptor).map { ($0.referenceId, $0.date, $0.exchangeRates) }
+
         return currencyExchangeModels
     }
     
@@ -106,7 +100,7 @@ actor DataModelActor: ModelActor {
             try modelContext.save()
         }
         catch {
-            
+            // TODO: Handle error
         }
     }
 }
