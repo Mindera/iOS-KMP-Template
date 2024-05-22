@@ -10,16 +10,31 @@ import CurrencyExchangeKMP
 
 @main
 struct iOSKMPApp: App {
+    
+    // MARK: - Properties
+    
     private let tabBarCoordinator: RootCoordinator
+    
+    var body: some Scene {
+        WindowGroup {
+            tabBarCoordinator.start()
+        }
+    }
+    
+    // MARK: - Init
     
     init() {
         tabBarCoordinator = TabBarCoordinator()
         IOSKoinHelperKt.doInitKoin()
+        setupLocaleValue()
+        Bundle.swizzleLocalization()
     }
-
-    var body: some Scene {
-        WindowGroup {
-            tabBarCoordinator.start()
+    
+    // MARK: - Private
+    
+    private func setupLocaleValue() {
+        if UserDefaults.standard.value(forKey: Constants.localeKey) == nil {
+            UserDefaults.standard.setValue(LanguageType.english.identifier, forKey: Constants.localeKey)
         }
     }
 }

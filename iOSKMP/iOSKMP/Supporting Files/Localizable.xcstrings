@@ -2,24 +2,21 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
-    },
-    "%lf" : {
-
-    },
-    "Acknowledgements" : {
-      "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Acknowledgements"
-          }
-        },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reconhecimentos"
+            "value" : ""
+          }
+        }
+      }
+    },
+    "%lf" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lf"
           }
         }
       }
@@ -40,6 +37,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Versão do aplicativo"
+          }
+        }
+      }
+    },
+    "Back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anterior"
           }
         }
       }
@@ -76,7 +84,14 @@
       }
     },
     "GitHub" : {
-
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Graph view" : {
       "extractionState" : "manual",
@@ -111,7 +126,15 @@
       }
     },
     "Mindera" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Open Source" : {
       "localizations" : {
@@ -150,6 +173,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Configurações"
+          }
+        }
+      }
+    },
+    "VTAckAcknowledgements" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acknowledgements"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agradecimentos"
           }
         }
       }

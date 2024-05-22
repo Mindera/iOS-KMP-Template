@@ -14,13 +14,13 @@ final class TabBarCoordinator: RootCoordinator {
     private var homeCoordinator: HomeCoordinator?
     private var settingsCoordinator: SettingsCoordinator?
     
-    // MARK: - Internal methods
+    // MARK: - Internal
     
     func start() -> AnyView {
         makeMenuTabView()
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func makeMenuTabView() -> AnyView {
         let tabs = [makeHomeRootTab(), makeSettingsRootTab()]
