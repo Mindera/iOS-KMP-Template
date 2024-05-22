@@ -25,7 +25,7 @@ import CurrencyExchangeKMP
         observeLastTenDaysData()
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func observeCurrentDateData() {
         coreModel.onChangeCurrentDay { [weak self] newState in

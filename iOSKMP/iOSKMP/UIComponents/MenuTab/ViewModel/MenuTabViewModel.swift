@@ -24,7 +24,7 @@ import Foundation
         self.delegate = delegate
     }
     
-    // MARK: - Methods
+    // MARK: - Internal
     
     func selectTab(_ tab: MenuTabType) {
         delegate?.didChangeSelectedTab(tab)

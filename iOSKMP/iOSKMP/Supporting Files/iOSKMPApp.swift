@@ -10,6 +10,7 @@ import CurrencyExchangeKMP
 
 @main
 struct iOSKMPApp: App {
+    
     // MARK: - Properties
     
     private let tabBarCoordinator: RootCoordinator
@@ -29,7 +30,7 @@ struct iOSKMPApp: App {
         Bundle.swizzleLocalization()
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func setupLocaleValue() {
         if UserDefaults.standard.value(forKey: Constants.localeKey) == nil {
