@@ -14,7 +14,7 @@ import CurrencyExchangeKMP
     
     var selectedViewMode: CurrencyExchangeViewMode
     var lastTenDaysCurrencyExchangeModels: [CurrencyExchangeListViewModel] = []
-    var currentDayExchangeRates: [CurrencyExchangeRate] = []
+    var currentDayExchangeRates: [CurrencyExchangeRateViewModel] = []
     var shouldPresentAlert: Bool = false
     var alertError: AlertError?
     
@@ -39,29 +39,9 @@ import CurrencyExchangeKMP
             do {
                 let fetchedData = try await dataCoordinator.fetchCurrencyExchangeData()
                 
-                currentDayExchangeRates = fetchedData.currencyExchangeRates.map {
-                    CurrencyExchangeRate(
-                        id: $0.id,
-                        code: $0.code,
-                        currencyName: $0.currencyName,
-                        exchangeRate: $0.exchangeRate
-                    )
-                }
+                currentDayExchangeRates = fetchedData.currencyExchangeRates.mapToCurrencyExchangeRateViewModels()
                 
-                lastTenDaysCurrencyExchangeModels = fetchedData.currencyExchangeModels.map {
-                    CurrencyExchangeListViewModel(
-                        id: $0.id,
-                        date: $0.date,
-                        exchangeRates: $0.exchangeRates.map {
-                            CurrencyExchangeRate(
-                                id: $0.id,
-                                code: $0.code,
-                                currencyName: $0.currencyName,
-                                exchangeRate: $0.exchangeRate
-                            )
-                        }
-                    )
-                }
+                lastTenDaysCurrencyExchangeModels = fetchedData.currencyExchangeModels.mapToCurrencyExchangeListViewModels()
             } catch {
                 updateErrorStateIfNeeded()
             }
@@ -98,7 +78,7 @@ import CurrencyExchangeKMP
         let orderedExchangeRates = exchangeRates.map {
             ExchangeRateWithTimestamp(
                 exchangeRate:
-                    ExchangeRate(
+                    CurrencyExchangeRate(
                         id: $0.id,
                         code: $0.code,
                         currencyName: $0.currency,
@@ -169,14 +149,7 @@ import CurrencyExchangeKMP
         Task {
             do {
                 let dataCoordinator = DataModelActor(modelContainer: modelContainer)
-                currentDayExchangeRates = try await dataCoordinator.fetchCurrencyExchangeRates().map {
-                    CurrencyExchangeRate(
-                        id: $0.id,
-                        code: $0.code,
-                        currencyName: $0.currencyName,
-                        exchangeRate: $0.exchangeRate
-                    )
-                }
+                currentDayExchangeRates = try await dataCoordinator.fetchCurrencyExchangeRates().mapToCurrencyExchangeRateViewModels()
             } catch {
                 updateErrorStateIfNeeded()
             }
@@ -187,20 +160,7 @@ import CurrencyExchangeKMP
         Task {
             do {
                 let dataCoordinator = DataModelActor(modelContainer: modelContainer)
-                lastTenDaysCurrencyExchangeModels = try await dataCoordinator.fetchCurrencyExchangeModels().map {
-                    CurrencyExchangeListViewModel(
-                        id: $0.id,
-                        date: $0.date,
-                        exchangeRates: $0.exchangeRates.map {
-                            CurrencyExchangeRate(
-                                id: $0.id,
-                                code: $0.code,
-                                currencyName: $0.currencyName,
-                                exchangeRate: $0.exchangeRate
-                            )
-                        }
-                    )
-                }
+                lastTenDaysCurrencyExchangeModels = try await dataCoordinator.fetchCurrencyExchangeModels().mapToCurrencyExchangeListViewModels()
             } catch {
                 updateErrorStateIfNeeded()
             }

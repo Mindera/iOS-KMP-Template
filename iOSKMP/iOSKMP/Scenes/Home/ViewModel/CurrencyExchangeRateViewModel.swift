@@ -2,12 +2,12 @@
 //  CurrencyExchangeRate.swift
 //  iOSKMP
 //
-//  Created by timea.varga on 22.05.2024.
+//  Created by timea.varga on 14.05.2024.
 //
 
 import Foundation
 
-struct CurrencyExchangeRate: Hashable, Codable {
+struct CurrencyExchangeRateViewModel: Identifiable {
     let id: String
     let code: String
     let currencyName: String

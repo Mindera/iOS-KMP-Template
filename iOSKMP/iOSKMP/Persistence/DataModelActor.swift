@@ -8,9 +8,8 @@
 import Foundation
 import SwiftData
 
-typealias ExchangeRate = (id: String, code: String, currencyName: String, exchangeRate: Double)
 typealias CurrencyExchange = (id: String, date: String, exchangeRates: [CurrencyExchangeRate])
-typealias ExchangeRateWithTimestamp = (exchangeRate: ExchangeRate, timestamp: Date)
+typealias ExchangeRateWithTimestamp = (exchangeRate: CurrencyExchangeRate, timestamp: Date)
 typealias CurrencyExchangeWithTimestamp = (currencyExchange: CurrencyExchange, timestamp: Date)
 
 actor DataModelActor: ModelActor {
@@ -66,18 +65,25 @@ actor DataModelActor: ModelActor {
         }
     }
     
-    func fetchCurrencyExchangeData() throws -> (currencyExchangeRates: [ExchangeRate], currencyExchangeModels: [CurrencyExchange]) {
+    func fetchCurrencyExchangeData() throws -> (currencyExchangeRates: [CurrencyExchangeRate], currencyExchangeModels: [CurrencyExchange]) {
         let currencyExchangeRates = try fetchCurrencyExchangeRates()
         let currencyExchangeModels = try fetchCurrencyExchangeModels()
         
         return (currencyExchangeRates, currencyExchangeModels)
     }
     
-    func fetchCurrencyExchangeRates() throws -> [ExchangeRate] {
-        var currencyExchangeRates: [ExchangeRate] = []
+    func fetchCurrencyExchangeRates() throws -> [CurrencyExchangeRate] {
+        var currencyExchangeRates: [CurrencyExchangeRate] = []
         
         let descriptor = FetchDescriptor<CurrencyExchangeRateModel>(sortBy: [SortDescriptor(\.timestamp)])
-        currencyExchangeRates = try modelContext.fetch(descriptor).map { ($0.referenceId, $0.code, $0.currencyName, $0.exchangeRate) }
+        currencyExchangeRates = try modelContext.fetch(descriptor).map {
+            CurrencyExchangeRate(
+                id: $0.referenceId,
+                code: $0.code,
+                currencyName: $0.currencyName,
+                exchangeRate: $0.exchangeRate
+            )
+        }
         
         return currencyExchangeRates
     }

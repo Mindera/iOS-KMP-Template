@@ -10,5 +10,5 @@ import Foundation
 struct CurrencyExchangeListViewModel: Identifiable {
     let id: String
     let date: String
-    let exchangeRates: [CurrencyExchangeRate]
+    let exchangeRates: [CurrencyExchangeRateViewModel]
 }
