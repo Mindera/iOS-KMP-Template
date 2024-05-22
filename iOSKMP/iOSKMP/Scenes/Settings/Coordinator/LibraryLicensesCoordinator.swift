@@ -19,7 +19,7 @@ final class LibraryLicensesCoordinator: Coordinator {
         self.router = router
     }
     
-    // MARK: - Internal methods
+    // MARK: - Internal
     
     func start() {
         let viewModel = LibraryLicencesViewModel(delegate: self)

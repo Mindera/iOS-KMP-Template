@@ -2,10 +2,24 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%lf" : {
-
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lf"
+          }
+        }
+      }
     },
     "App Size" : {
       "localizations" : {
@@ -70,7 +84,14 @@
       }
     },
     "GitHub" : {
-
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Graph view" : {
       "extractionState" : "manual",
@@ -105,7 +126,15 @@
       }
     },
     "Mindera" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Open Source" : {
       "localizations" : {
@@ -159,7 +188,7 @@
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Agradecimentos"
           }
         }

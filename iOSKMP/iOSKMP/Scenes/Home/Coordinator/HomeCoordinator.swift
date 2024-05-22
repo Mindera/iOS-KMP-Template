@@ -13,7 +13,7 @@ final class HomeCoordinator: RootCoordinator {
     
     private var viewModel: CurrencyExchangeViewModel?
     
-    // MARK: - Internal methods
+    // MARK: - Internal
     
     func start() -> AnyView {
         makeHomeView()
@@ -23,7 +23,7 @@ final class HomeCoordinator: RootCoordinator {
         viewModel?.selectedViewMode = .graph
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func makeHomeView() -> AnyView {
         let viewModel = CurrencyExchangeViewModel(selectedViewMode: .graph)
