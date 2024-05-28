@@ -34,7 +34,7 @@ import CurrencyExchangeKMP
             } else if newState.error != nil {
                 // TODO: Handle error
             } else {
-                guard let exchangeRates = newState.launches.first?.rates else { return }
+                guard let exchangeRates = newState.currencyExchange.first?.rates else { return }
                 
                 self?.currentDayExhangeRates = exchangeRates.map {
                     CurrencyExchangeRateModel(
@@ -55,7 +55,7 @@ import CurrencyExchangeKMP
             } else if newState.error != nil {
                 // TODO: Handle error
             } else {
-                self?.lastTenDaysCurrencyExchangeModels = newState.launches.map {
+                self?.lastTenDaysCurrencyExchangeModels = newState.currencyExchange.map {
                     CurrencyExchangeModel(
                         date: $0.effectiveDate,
                         exchangeRates: $0.rates.map {
